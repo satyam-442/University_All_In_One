@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentsActivity"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comments:"
+        android:textColor="#000"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/comment_layout"
+        android:layout_below="@id/textView">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:background="#D8D8D8">
+
+        <ImageView
+            android:id="@+id/comment_profile_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/default_avatar"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"/>
+
+        <EditText
+            android:id="@+id/comment_input"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:background="@drawable/comment_inputs"
+            android:inputType="textMultiLine"
+            android:paddingStart="12dp"
+            android:hint="Comment..."
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="monospace" />
+
+        <ImageView
+            android:id="@+id/post_comment_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:baselineAlignBottom="true"
+            android:src="@drawable/send" />
+
+    </LinearLayout>
+</RelativeLayout>

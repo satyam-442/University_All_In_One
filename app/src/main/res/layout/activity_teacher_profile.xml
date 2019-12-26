@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeacherProfile">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/backteachprofile"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/teachergrad"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/teacher_profilePage_picture"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/default_avatar" />
+
+            <TextView
+                android:id="@+id/teacher_profilePage_name"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/pacifico"
+                android:gravity="center"
+                android:hint="NAME"
+                android:textColor="@color/white"
+                android:textColorHint="#fff"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="@color/grey"
+                android:gravity="center">
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blog Written"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_blogPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="15"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/line_background">
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blog Followers"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_blogFollower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="19"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-mail"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/teacher_profilePage_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="abc@gmail.com"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@color/grey"
+                android:gravity="center">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qualification"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/teacher_profilePage_merit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Teacher's qualification"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@color/grey"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/teacher_profilePage_button"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="95dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginBottom="56dp"
+                android:background="@drawable/techer_profile_follow_button"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="F O L L O W"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

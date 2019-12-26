@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeacherActivity"
+    android:background="@drawable/teachergrad">
+
+    <TextView
+        android:id="@+id/demo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search for the Expertise Teacher"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="2dp"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:id="@+id/linear_search"
+        android:layout_below="@id/demo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true">
+
+        <EditText
+            android:id="@+id/teacher_search_input"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:hint="Search Teacher"
+            android:paddingStart="10dp"
+            android:background="@drawable/input_back"/>
+
+        <ImageButton
+            android:id="@+id/teacher_search_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/input_back"
+            android:src="@drawable/search"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/all_teacher_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linear_search">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

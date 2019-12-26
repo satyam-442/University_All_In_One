@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:orientation="vertical"
+                android:layout_margin="40dp"
+                android:background="@drawable/aboutus_border">
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-15dp"
+                    android:src="@drawable/satyam"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Satyam Tiwari"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/pacifico"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Java Developer"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif-monospace"/>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/facebook"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/twitter"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/instagram"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:orientation="vertical"
+                android:layout_margin="40dp"
+                android:background="@drawable/aboutus_border">
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-15dp"
+                    android:src="@drawable/chandu"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chandrakanth Vemula"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/pacifico"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UI/UX Developer"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif-monospace"/>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/facebook"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/twitter"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/instagram"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:orientation="vertical"
+                android:layout_margin="40dp"
+                android:background="@drawable/aboutus_border">
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-15dp"
+                    android:src="@drawable/zaheer"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zaheer Ansari"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/pacifico"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Java Developer"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif-monospace"/>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/facebook"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/twitter"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/instagram"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

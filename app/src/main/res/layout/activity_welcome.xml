@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="-2dp"
+    android:layout_marginRight="-2dp"
+    android:layout_marginTop="-2dp"
+    tools:context=".WelcomeActivity"
+    android:background="@drawable/mainback">
+
+
+    <ImageView
+        android:id="@+id/welcomeLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="99dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="155dp"
+        android:src="@drawable/logo_new" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeLogo"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/bitter"
+        android:text="Welcome!"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeText"
+        android:layout_alignStart="@+id/welcomeText"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/pacifico"
+        android:text="Nice to see you."
+        android:textColor="@color/white"
+        android:textSize="21sp" />
+
+    <Button
+        android:id="@+id/welcomeLogin"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="26dp"
+        android:text="Login"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@drawable/custumbuttons"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="19dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bitter"
+            android:text="You are Not a Member?"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/welcomeRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/bitter"
+            android:text=" Register."
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

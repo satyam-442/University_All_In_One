@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "714360234697",
+    "firebase_url": "https://collegeproject-614a6.firebaseio.com",
+    "project_id": "collegeproject-614a6",
+    "storage_bucket": "collegeproject-614a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714360234697:android:df8b060f3aed5957",
+        "android_client_info": {
+          "package_name": "com.example.sonoflordshiva.bnnaio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714360234697-olrj1mj6smv0mbadlreop7c7ga0hvqao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sonoflordshiva.bnnaio",
+            "certificate_hash": "94aca601513035e6e19cdfd7d019e62637e74096"
+          }
+        },
+        {
+          "client_id": "714360234697-sk5bpqvkj3omr2u9u2r9u7l80oa2bph4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCONvecz8INTOHrwWpVqkU6wPYdTmuVLZY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714360234697-sk5bpqvkj3omr2u9u2r9u7l80oa2bph4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714360234697:android:51c356a95a6695d7",
+        "android_client_info": {
+          "package_name": "com.example.sonoflordshiva.collegeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714360234697-mru2ba8e05tijl2196i4lrrd2621056t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sonoflordshiva.collegeproject",
+            "certificate_hash": "94aca601513035e6e19cdfd7d019e62637e74096"
+          }
+        },
+        {
+          "client_id": "714360234697-sk5bpqvkj3omr2u9u2r9u7l80oa2bph4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCONvecz8INTOHrwWpVqkU6wPYdTmuVLZY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714360234697-sk5bpqvkj3omr2u9u2r9u7l80oa2bph4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

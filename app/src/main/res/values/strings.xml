@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BNN AIO Student</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start_your_query_with">Start your query with \"What\",\"Why\",\"How\",etc.</string>
+    <string name="intro">In the world of technology, it is very outdated to use traditional concept to study as it is not more effective and is more costly. So the system we are going to design is completely based on a new innovation that brings all academic works in a single app. Using this approach will give you the advantage to give time to your study stuff anywhere and anytime. BNN AIO is a revolution in education system, which allow the students to Learn and Think on their own.</string>
+    <string-array name="users">
+        <item>-Select  User-</item>
+        <item>Student</item>
+        <item>Teacher</item>
+    </string-array>
+</resources>
