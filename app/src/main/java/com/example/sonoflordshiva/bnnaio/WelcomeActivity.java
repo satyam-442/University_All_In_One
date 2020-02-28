@@ -34,6 +34,7 @@ public class WelcomeActivity extends AppCompatActivity
             }
         });
 
+
         regis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

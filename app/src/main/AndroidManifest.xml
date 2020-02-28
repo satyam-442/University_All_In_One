@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomePage"></activity>
+        <activity android:name=".HomePage" />
         <activity android:name=".DemoFile" />
         <activity
             android:name=".WelcomeActivity"
