@@ -14,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity
 
     TextView titleTv;
     LinearLayout messageTv;
-    ImageView displayConnPopupImage, syllabusPage;
+    CardView displayConnPopupImage, syllabusPage;
 
     //EditText addQuery,addSubject, addComment;
     Button btnCloseApp;
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         View navView = navigationView.inflateHeaderView(R.layout.navigation_header);
         navProfileName = (TextView) navView.findViewById(R.id.nav_user_full_name);
-        syllabusPage = (ImageView) findViewById(R.id.syllabus);
+        syllabusPage = (CardView) findViewById(R.id.syllabus);
 
         UserRef.child(currentUserId).addValueEventListener(new ValueEventListener()
         {
