@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alegreya_sc_bold</item>
+        <item>@font/chewy</item>
         <item>@font/pacifico</item>
     </array>
 </resources>

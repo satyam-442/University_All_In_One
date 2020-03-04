@@ -47,12 +47,12 @@
                             android:id="@+id/homeTop"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Discover Your Need"
-                            android:fontFamily="@font/alegreya"
-                            android:textSize="25sp"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="15dp"
-                            android:textColor="@color/colorPrimary"/>
+                            android:fontFamily="@font/chewy"
+                            android:text="Discover Your Need"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/quote"
