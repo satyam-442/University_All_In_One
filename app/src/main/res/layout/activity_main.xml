@@ -49,7 +49,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="15dp"
-                            android:fontFamily="@font/pacifico"
+                            android:fontFamily="@font/alegreya"
                             android:text="Discover Your Need"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp" />
