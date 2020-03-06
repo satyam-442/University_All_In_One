@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/drawer_layout"
-    android:background="@drawable/main_visiblity">
+    android:background="@drawable/main_visiblity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
 
     <RelativeLayout
