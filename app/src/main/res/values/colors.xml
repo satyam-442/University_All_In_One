@@ -3,14 +3,8 @@
     <color name="colorPrimary">#ed4c54</color>
     <color name="colorPrimaryDark">#a3000b</color>
     <color name="colorAccent">#e9ebee</color>
-    <color name="backgroundcolor">#edecec</color>
-    <color name="lightgrey">#ededed</color>
-    <color name="deeppurple">#7c4dff</color>
-    <color name="yellow">#ffb300</color>
-    <color name="green">#00e6c6</color>
     <color name="grey">#18C3F8</color>
     <color name="red">#C40101</color>
     <color name="white">#ffffff</color>
-    <color name="creame">#ccbcbc</color>
     <color name="black">#000000</color>
 </resources>

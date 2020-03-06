@@ -3,7 +3,8 @@
     <item
         android:id="@+id/nav_home"
         android:title="Home"
-        android:icon="@drawable/home"/>
+        android:icon="@drawable/home"
+        />
     <item
         android:id="@+id/nav_profile"
         android:title="Profile"
@@ -11,7 +12,7 @@
     <item
         android:id="@+id/nav_notification"
         android:title="Notification"
-        android:icon="@drawable/notification"/>
+        android:icon="@drawable/notification" />
     <item
         android:id="@+id/nav_setting"
         android:title="Settings"
