@@ -46,7 +46,7 @@ public class HomeYear extends AppCompatActivity
 
         mToolbar = (Toolbar) findViewById(R.id.home_page_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle("Semesters");
 
         homeDrawerLayout =(DrawerLayout) findViewById(R.id.home_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(HomeYear.this,homeDrawerLayout,R.string.drawer_open,R.string.drawer_close);
@@ -202,6 +202,9 @@ public class HomeYear extends AppCompatActivity
             case R.id.nav_discuss:
                 SendUserToDiscussPage();
                 break;
+            case R.id.nav_teacher:
+                SendToTeacherPage();
+                break;
             case R.id.nav_logout:
                 mAuth.signOut();
                 SendUserToLoginActivity();
@@ -271,7 +274,7 @@ public class HomeYear extends AppCompatActivity
     }
 
     private void SendUserToHomeActivity() {
-        Intent homeIntent = new Intent(this,HomeYear.class);
+        Intent homeIntent = new Intent(this,MainActivity.class);
         startActivity(homeIntent);
     }
 
@@ -281,5 +284,9 @@ public class HomeYear extends AppCompatActivity
         loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(loginIntent);
         finish();
+    }
+    private void SendToTeacherPage() {
+        Intent profileIntent = new Intent(this,TeacherActivity.class);
+        startActivity(profileIntent);
     }
 }

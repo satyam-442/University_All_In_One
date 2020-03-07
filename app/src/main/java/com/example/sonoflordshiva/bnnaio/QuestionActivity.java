@@ -122,7 +122,7 @@ public class QuestionActivity extends AppCompatActivity
         queryDailog = new Dialog(this);
 
         addQuery = (EditText) findViewById(R.id.popupProfileQuery);
-        addComment = (EditText) findViewById(R.id.popupProfileComment);
+       // addComment = (EditText) findViewById(R.id.popupProfileComment);
 
         //btnSend = (Button) findViewById(R.id.btnSendQuery);
 

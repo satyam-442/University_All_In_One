@@ -15,6 +15,11 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Feedback"></activity>
+        <activity android:name=".Questions" />
+        <activity android:name=".BlogActivity" />
+        <activity android:name=".VideoLectures" />
+        <activity android:name=".PowerPoint" />
         <activity android:name=".HomePage" />
         <activity android:name=".DemoFile" />
         <activity

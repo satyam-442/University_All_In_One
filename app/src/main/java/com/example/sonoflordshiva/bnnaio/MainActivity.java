@@ -19,7 +19,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity
 
     TextView titleTv;
     LinearLayout messageTv;
-    CardView displayConnPopupImage, syllabusPage;
+    CardView displayConnPopupImage, syllabusPage,pptpage,videolecturespage,blogpage,questionspage,feddbackpage;
 
     //EditText addQuery,addSubject, addComment;
     Button btnCloseApp;
@@ -97,7 +96,44 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         View navView = navigationView.inflateHeaderView(R.layout.navigation_header);
         navProfileName = (TextView) navView.findViewById(R.id.nav_user_full_name);
+
         syllabusPage = (CardView) findViewById(R.id.syllabus);
+        pptpage = (CardView) findViewById(R.id.ppt);
+
+        pptpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PPTActivity();
+            }
+        });
+        videolecturespage = (CardView) findViewById(R.id.videolectures);
+        videolecturespage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                videoLectures();
+            }
+        });
+        blogpage = (CardView) findViewById(R.id.blogs);
+        blogpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                blog();
+            }
+        });
+        questionspage = (CardView) findViewById(R.id.questions);
+        questionspage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                questions();
+            }
+        });
+        feddbackpage= (CardView) findViewById(R.id.feedbacks);
+        feddbackpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                feedbackpage();
+            }
+        });
 
         UserRef.child(currentUserId).addValueEventListener(new ValueEventListener()
         {
@@ -139,10 +175,43 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                SendUserToMainActivity();
+                SendUserToSemesterActivity();
             }
         });
     }
+
+    private void feedbackpage() {
+        Intent homeIntent = new Intent(this,Feedback.class);
+        startActivity(homeIntent);
+    }
+
+    private void questions() {
+        Intent homeIntent = new Intent(this,Questions.class);
+        startActivity(homeIntent);
+    }
+
+    private void blog() {
+        Intent homeIntent = new Intent(this, BlogActivity.class);
+        startActivity(homeIntent);
+    }
+
+    private void videoLectures() {
+        Intent homeIntent = new Intent(this,VideoLectures.class);
+        startActivity(homeIntent);
+    }
+
+    private void PPTActivity() {
+        Intent homeIntent = new Intent(this,PowerPoint.class);
+        startActivity(homeIntent);
+    }
+
+
+    private void SendUserToSemesterActivity() {
+        Intent homeIntent = new Intent(this,HomeYear.class);
+        startActivity(homeIntent);
+    }
+
+
 
     private Dialog buildDialog(MainActivity mainActivity)
     {
@@ -332,7 +401,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void SendUserToMainActivity() {
-        Intent homeIntent = new Intent(this,HomeYear.class);
+        Intent homeIntent = new Intent(this,MainActivity.class);
         startActivity(homeIntent);
     }
 
