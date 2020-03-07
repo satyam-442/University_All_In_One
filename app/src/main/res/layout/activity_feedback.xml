@@ -17,7 +17,7 @@
         <include
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:id="@+id/feedback_page_toolbarr"
+            android:id="@+id/feedback_page_toolbar"
             layout="@layout/app_bar_layout">
         </include>
 

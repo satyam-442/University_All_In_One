@@ -41,7 +41,7 @@ public class Feedback extends AppCompatActivity {
         UserRef= FirebaseDatabase.getInstance().getReference().child("Students");
 
 
-        mToolbar = (Toolbar) findViewById(R.id.blog_page_toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.feedback_page_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Feedbacks");
 
@@ -94,7 +94,7 @@ public class Feedback extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        blogDrawerLayout= (DrawerLayout) findViewById(R.id.blog_drawer_layout);
+        blogDrawerLayout= (DrawerLayout) findViewById(R.id.feedback_drawer_layout);
         if(blogDrawerLayout.isDrawerOpen(GravityCompat.START))
         {
             blogDrawerLayout.closeDrawer(GravityCompat.START);
