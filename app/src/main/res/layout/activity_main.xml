@@ -220,7 +220,6 @@
                                     android:layout_width="393dp"
                                     android:layout_height="140dp"
                                     app:cardCornerRadius="5dp"
-
                                     app:cardBackgroundColor="#475353">
 
 
