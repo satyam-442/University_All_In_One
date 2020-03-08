@@ -20,6 +20,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class VideoLectures extends AppCompatActivity {
     private Toolbar mToolbar;
@@ -30,6 +35,7 @@ public class VideoLectures extends AppCompatActivity {
     FirebaseAuth mAuth;
     DatabaseReference UserRef;
     String currentUserId;
+    CircleImageView imageVHead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +60,8 @@ public class VideoLectures extends AppCompatActivity {
         View navView = homeNavigationView.inflateHeaderView(R.layout.navigation_header);
         homeNavProfileName = (TextView) navView.findViewById(R.id.nav_user_full_name);
 
+        imageVHead = (CircleImageView) navView.findViewById(R.id.nav_header_profile);
+
         UserRef.child(currentUserId).addValueEventListener(new ValueEventListener()
         {
             @Override
@@ -70,6 +78,26 @@ public class VideoLectures extends AppCompatActivity {
                     {
                         Toast.makeText(VideoLectures.this, "Profile do not exists", Toast.LENGTH_SHORT).show();
                     }
+                }
+
+                final String imageHead = dataSnapshot.child("image").getValue().toString();
+                if(!imageHead.equals("default"))
+                {
+                    Picasso.with(VideoLectures.this).load(imageHead).placeholder(R.drawable.c1).into(imageVHead);
+                    Picasso.with(VideoLectures.this).load(imageHead).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.c1).into(imageVHead, new Callback()
+                    {
+                        @Override
+                        public void onSuccess()
+                        {
+
+                        }
+
+                        @Override
+                        public void onError()
+                        {
+                            Picasso.with(VideoLectures.this).load(imageHead).placeholder(R.drawable.c1).into(imageVHead);
+                        }
+                    });
                 }
             }
 

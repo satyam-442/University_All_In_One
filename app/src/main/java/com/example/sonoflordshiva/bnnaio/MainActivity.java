@@ -31,6 +31,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity
     private Toolbar mToolbar;
     private Handler handler;
     private Runnable runnable;
+    CircleImageView imageVHead;
 
     private TextView navProfileName;
     private Button mainPageButton;
@@ -97,6 +103,8 @@ public class MainActivity extends AppCompatActivity
         View navView = navigationView.inflateHeaderView(R.layout.navigation_header);
         navProfileName = (TextView) navView.findViewById(R.id.nav_user_full_name);
 
+        imageVHead = (CircleImageView) navView.findViewById(R.id.nav_header_profile);
+
         syllabusPage = (CardView) findViewById(R.id.syllabus);
         pptpage = (CardView) findViewById(R.id.ppt);
 
@@ -151,6 +159,26 @@ public class MainActivity extends AppCompatActivity
                     {
                         Toast.makeText(MainActivity.this, "Profile do not exists", Toast.LENGTH_SHORT).show();
                     }
+                }
+
+                final String imageHead = dataSnapshot.child("image").getValue().toString();
+                if(!imageHead.equals("default"))
+                {
+                    Picasso.with(MainActivity.this).load(imageHead).placeholder(R.drawable.c1).into(imageVHead);
+                    Picasso.with(MainActivity.this).load(imageHead).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.c1).into(imageVHead, new Callback()
+                    {
+                        @Override
+                        public void onSuccess()
+                        {
+
+                        }
+
+                        @Override
+                        public void onError()
+                        {
+                            Picasso.with(MainActivity.this).load(imageHead).placeholder(R.drawable.c1).into(imageVHead);
+                        }
+                    });
                 }
             }
 

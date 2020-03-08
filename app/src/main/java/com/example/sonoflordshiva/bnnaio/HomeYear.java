@@ -21,6 +21,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeYear extends AppCompatActivity
 {
@@ -33,6 +38,7 @@ public class HomeYear extends AppCompatActivity
     private FirebaseAuth mAuth;
     private DatabaseReference UserRef;
     String currentUserId;
+    CircleImageView imageVHead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,6 +63,7 @@ public class HomeYear extends AppCompatActivity
         homeNavigationView = (NavigationView) findViewById(R.id.navigation_view);
         View navView = homeNavigationView.inflateHeaderView(R.layout.navigation_header);
         homeNavProfileName = (TextView) navView.findViewById(R.id.nav_user_full_name);
+        imageVHead = (CircleImageView) navView.findViewById(R.id.nav_header_profile);
 
         UserRef.child(currentUserId).addValueEventListener(new ValueEventListener()
         {
@@ -74,6 +81,25 @@ public class HomeYear extends AppCompatActivity
                     {
                         Toast.makeText(HomeYear.this, "Profile do not exists", Toast.LENGTH_SHORT).show();
                     }
+                }
+                final String imageHead = dataSnapshot.child("image").getValue().toString();
+                if(!imageHead.equals("default"))
+                {
+                    Picasso.with(HomeYear.this).load(imageHead).placeholder(R.drawable.c1).into(imageVHead);
+                    Picasso.with(HomeYear.this).load(imageHead).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.c1).into(imageVHead, new Callback()
+                    {
+                        @Override
+                        public void onSuccess()
+                        {
+
+                        }
+
+                        @Override
+                        public void onError()
+                        {
+                            Picasso.with(HomeYear.this).load(imageHead).placeholder(R.drawable.c1).into(imageVHead);
+                        }
+                    });
                 }
             }
 
