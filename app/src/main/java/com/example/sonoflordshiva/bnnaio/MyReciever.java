@@ -47,7 +47,8 @@ public class MyReciever extends BroadcastReceiver
                     @Override
                     public void onClick(View v)
                     {
-                        alertdailog.dismiss();
+                        //alertdailog.dismiss();
+                        System.exit(0);
                     }
                 });
 

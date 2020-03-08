@@ -26,7 +26,7 @@ public class CommunicationSkill extends AppCompatActivity
     private PDFView pdfView;
     private TextView imperativeTextview;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference mref = database.getReference("oops");
+    private DatabaseReference mref = database.getReference("cs");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

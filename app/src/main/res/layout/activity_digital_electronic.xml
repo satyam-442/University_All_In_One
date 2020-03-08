@@ -10,11 +10,19 @@
     <com.github.barteksc.pdfviewer.PDFView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/digital_pdfview"/>
+        android:id="@+id/digital_pdfview">
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:id="@+id/proElect"/>
+    </com.github.barteksc.pdfviewer.PDFView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/digital_textview"
         android:visibility="invisible"/>
+
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.sonoflordshiva.bnnaio;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +23,8 @@ public class ForgotPassword extends AppCompatActivity
     private EditText ResetEmailInput;
     private Toolbar mToolbar;
     private FirebaseAuth mAuth;
+    private ProgressDialog loadingbar;
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,12 +33,23 @@ public class ForgotPassword extends AppCompatActivity
         setContentView(R.layout.activity_forgot_password);
 
         mAuth = FirebaseAuth.getInstance();
+        back = (ImageView) findViewById(R.id.backarrowReset);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(ForgotPassword.this,LoginActivity.class);
+                back.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(back);
+            }
+        });
 
         mToolbar = (Toolbar) findViewById(R.id.forgot_password_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Reset Password");
+
+        loadingbar = new ProgressDialog(this);
 
         ResetPasswordButton = (Button) findViewById(R.id.reset_password_button);
         ResetEmailInput = (EditText) findViewById(R.id.reset_password_email_input);
@@ -50,6 +65,10 @@ public class ForgotPassword extends AppCompatActivity
                 }
                 else
                 {
+                    loadingbar.setTitle("Sending Mail");
+                    loadingbar.setMessage("please wait...");
+                    loadingbar.show();
+                    loadingbar.setCanceledOnTouchOutside(true);
                     mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task)

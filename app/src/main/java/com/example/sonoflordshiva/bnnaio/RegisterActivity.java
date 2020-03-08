@@ -93,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity
             {
                 Intent wec = new Intent(RegisterActivity.this,WelcomeActivity.class);
                 startActivity(wec);
-                finish();
             }
         });
 

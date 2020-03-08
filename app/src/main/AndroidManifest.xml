@@ -34,13 +34,20 @@
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".PreviousActivity" />
-        <activity android:name=".UnsolvedQuery" />
-        <activity android:name=".MyQueryActivity" />
-        <activity android:name=".TeacherActivity" />
-        <activity android:name=".TeacherProfile" />
-        <activity android:name=".CommentsActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".PreviousActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".UnsolvedQuery"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MyQueryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TeacherActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TeacherProfile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CommentsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".WelcomeActivity"
@@ -54,18 +61,28 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Setting"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ForgotPassword"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Profile" />
-        <activity android:name=".FirstSemester" />
-        <activity android:name=".SecondSemester" />
-        <activity android:name=".ThirdSemester" />
-        <activity android:name=".FourthActivity" />
-        <activity android:name=".FifthActivity" />
-        <activity android:name=".SixthSemester" />
-        <activity android:name=".DigitalElectronic" />
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Profile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FirstSemester"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SecondSemester"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ThirdSemester"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FourthActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FifthActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SixthSemester"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DigitalElectronic"
+            android:screenOrientation="portrait"/>
         <activity android:name=".CommunicationSkill" />
         <activity android:name=".ImperativeProgramming" />
         <activity android:name=".DiscreteMath" />

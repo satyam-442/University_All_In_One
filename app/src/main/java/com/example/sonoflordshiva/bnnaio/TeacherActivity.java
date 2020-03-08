@@ -79,7 +79,8 @@ public class TeacherActivity extends AppCompatActivity
                 holder.setTeachFullname(model.getTeachFullname());
                 holder.setTeachImage(getApplicationContext(),model.getTeachImage());
                 holder.setTeachQualification(model.getTeachQualification());
-                holder.mView.setOnClickListener(new View.OnClickListener() {
+                holder.mView.setOnClickListener(new View.OnClickListener()
+                {
                     @Override
                     public void onClick(View v)
                     {

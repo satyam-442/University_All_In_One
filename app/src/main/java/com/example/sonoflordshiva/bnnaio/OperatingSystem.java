@@ -25,7 +25,7 @@ public class OperatingSystem extends AppCompatActivity
     private PDFView oppdfView;
     private TextView optextView;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference mref = database.getReference("oops");
+    private DatabaseReference mref = database.getReference("operating");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

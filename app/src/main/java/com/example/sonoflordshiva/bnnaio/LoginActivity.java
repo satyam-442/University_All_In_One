@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity
         UserEmail = (EditText) findViewById(R.id.login_user_name);
         UserPassword = (EditText) findViewById(R.id.login_user_password);
         LoginButton = (Button) findViewById(R.id.login_button);
-        //ForgotPasword = (TextView) findViewById(R.id.forgot_password);
+        ForgotPasword = (TextView) findViewById(R.id.forgetPwdLog);
         loadingbar = new ProgressDialog(this);
         back = (ImageView) findViewById(R.id.backarrowLogin);
         back.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent wec = new Intent(LoginActivity.this,WelcomeActivity.class);
                 startActivity(wec);
-                finish();
             }
         });
 
@@ -102,14 +101,14 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
-        /*ForgotPasword.setOnClickListener(new View.OnClickListener()
+        ForgotPasword.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 startActivity(new Intent(LoginActivity.this,ForgotPassword.class));
             }
-        });*/
+        });
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override

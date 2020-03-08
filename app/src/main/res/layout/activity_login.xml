@@ -99,18 +99,18 @@
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/needHelpLogin"
+        android:id="@+id/forgetPwdLog"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_user_password"
         android:layout_alignEnd="@+id/login_user_password"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="34dp"
         android:layout_toEndOf="@+id/login_button"
         android:fontFamily="@font/bitter"
         android:gravity="end"
         android:textSize="18sp"
-        android:text="Need Help?"
+        android:text="Recover Account"
         android:textColor="@color/red"
         android:textStyle="bold" />
 

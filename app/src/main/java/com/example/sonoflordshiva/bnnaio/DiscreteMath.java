@@ -25,7 +25,7 @@ public class DiscreteMath extends AppCompatActivity
     private PDFView dispdfView;
     private TextView distextView;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference mref = database.getReference("oops");
+    private DatabaseReference mref = database.getReference("discrete");
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,13 +27,15 @@ public class DigitalElectronic extends AppCompatActivity
     private PDFView pdfView;
     private TextView textView;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference mref = database.getReference("oops");
+    private ProgressBar bar ;
+    private DatabaseReference mref = database.getReference("digitalelectronics");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_digital_electronic);
         pdfView = (PDFView) findViewById(R.id.digital_pdfview);
         textView = (TextView) findViewById(R.id.digital_textview);
+        bar = (ProgressBar) findViewById(R.id.proElect);
         mref.addValueEventListener(new ValueEventListener()
         {
             @Override
@@ -47,6 +51,7 @@ public class DigitalElectronic extends AppCompatActivity
             public void onCancelled(@NonNull DatabaseError databaseError)
             {
                 Toast.makeText(DigitalElectronic.this, "Failed to Load", Toast.LENGTH_SHORT).show();
+                bar.setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -57,6 +62,7 @@ public class DigitalElectronic extends AppCompatActivity
             InputStream inputStream = null;
             try
             {
+                bar.setVisibility(View.VISIBLE);
                 URL url = new URL(strings[0]);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 if(urlConnection.getResponseCode()==200)
@@ -73,7 +79,13 @@ public class DigitalElectronic extends AppCompatActivity
             @Override
             protected void onPostExecute(InputStream inputStream)
             {
+                bar.setVisibility(View.GONE);
                 pdfView.fromStream(inputStream).load();
             }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            bar.setVisibility(View.INVISIBLE);
         }
+    }
     }
