@@ -19,7 +19,7 @@
         <activity android:name=".DemoFile" />
         <activity
             android:name=".WelcomeActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,14 +36,14 @@
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".WelcomeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".WelcomeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".SetupActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".Setting"
             android:parentActivityName=".MainActivity" />

@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.sonoflordshiva.bnnaio.AsTeacher.LoginTeacher;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class WelcomeActivity extends AppCompatActivity
 {
 
-    private TextView regis;
+    private TextView regis, continueAsTeacher;
     private Button login;
     FirebaseAuth mAuth;
 
@@ -24,6 +25,14 @@ public class WelcomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_welcome);
         login = (Button) findViewById(R.id.welcomeLogin);
         regis = (TextView) findViewById(R.id.welcomeRegister);
+        continueAsTeacher = (TextView) findViewById(R.id.continueAsTeacher);
+        continueAsTeacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logTeach = new Intent(WelcomeActivity.this, LoginTeacher.class);
+                startActivity(logTeach);
+            }
+        });
         mAuth = FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
