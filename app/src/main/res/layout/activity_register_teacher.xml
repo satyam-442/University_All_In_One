@@ -32,6 +32,17 @@
         android:text="Hello There!"
         android:textSize="45sp" />
 
+    <TextView
+        android:id="@+id/normalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/signTeacher_studName"
+        android:layout_below="@id/hello"
+        android:fontFamily="@font/bitter"
+        android:text="-as Teacher"
+        android:textSize="21sp"
+        android:layout_marginEnd="12dp"/>
+
     <EditText
         android:id="@+id/signTeacher_studName"
         android:layout_width="wrap_content"

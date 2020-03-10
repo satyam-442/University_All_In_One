@@ -7,12 +7,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sonoflordshiva.bnnaio.LoginActivity;
 import com.example.sonoflordshiva.bnnaio.R;
+import com.example.sonoflordshiva.bnnaio.RegisterActivity;
+import com.example.sonoflordshiva.bnnaio.WelcomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +31,9 @@ import java.util.HashMap;
 
 public class RegisterTeacher extends AppCompatActivity
 {
+
+    TextView hasAccountTeach;
+    ImageView backRegTeach;
 
     FirebaseAuth mAuth;
     DatabaseReference userRef;
@@ -61,6 +69,27 @@ public class RegisterTeacher extends AppCompatActivity
             }
         });
 
+        hasAccountTeach = (TextView) findViewById(R.id.already_have_accountTeacher);
+        hasAccountTeach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent login = new Intent(RegisterTeacher.this, LoginActivity.class);
+                startActivity(login);
+                finish();
+            }
+        });
+        backRegTeach = (ImageView) findViewById(R.id.backarrowRegisTeacher);
+        backRegTeach.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent wec = new Intent(RegisterTeacher.this, WelcomeActivity.class);
+                startActivity(wec);
+            }
+        });
+
+        loadingBar = new ProgressDialog(this);
     }
 
     private void CreateTeacherAccount()
