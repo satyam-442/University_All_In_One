@@ -1,11 +1,13 @@
 package com.example.sonoflordshiva.bnnaio;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-public class ThirdSemester extends AppCompatActivity 
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ThirdSemester extends AppCompatActivity
 {
     private ImageView pythonProgramming;
     private ImageView dataStructure;

@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AsTeacher.LoginTeacher">
+    tools:context=".AsTeacher.RegisterTeacher">
 
     <ImageView
-        android:id="@+id/backarrowLoginTeacher"
+        android:id="@+id/backarrowRegisTeacher"
         android:layout_width="60dp"
         android:layout_height="25dp"
         android:layout_alignStart="@+id/hello"
@@ -21,8 +21,8 @@
         android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/loginTeacher_user_name"
-        android:layout_alignEnd="@+id/loginTeacher_user_name"
+        android:layout_alignStart="@+id/signTeacher_studName"
+        android:layout_alignEnd="@+id/signTeacher_studName"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-17dp"
         android:layout_marginTop="167dp"
@@ -32,19 +32,8 @@
         android:text="Hello There!"
         android:textSize="45sp" />
 
-    <TextView
-        android:id="@+id/normalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/loginTeacher_user_name"
-        android:layout_below="@id/hello"
-        android:fontFamily="@font/bitter"
-        android:text="-as Teacher"
-        android:textSize="21sp"
-        android:layout_marginEnd="12dp"/>
-
     <EditText
-        android:id="@+id/loginTeacher_user_name"
+        android:id="@+id/signTeacher_studName"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
@@ -55,17 +44,17 @@
         android:layout_marginEnd="42dp"
         android:background="@drawable/customize_inputs"
         android:ems="15"
-        android:hint="Enter Phone no."
+        android:hint="Name"
         android:inputType="phone"
         android:labelFor="@id/login_user_name"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
 
     <EditText
-        android:id="@+id/loginTeacher_user_password"
+        android:id="@+id/signTeacher_studPhone"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
-        android:layout_below="@+id/loginTeacher_user_name"
+        android:layout_below="@+id/signTeacher_studName"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="45dp"
@@ -73,54 +62,89 @@
         android:layout_marginEnd="45dp"
         android:background="@drawable/customize_inputs"
         android:ems="15"
-        android:hint="Password"
+        android:hint="Contact no."
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
 
-    <TextView
-        android:id="@+id/attempt_leftTeacher"
-        android:layout_width="160dp"
-        android:layout_height="36dp"
-        android:layout_alignStart="@+id/loginTeacher_user_password"
-        android:layout_alignEnd="@+id/loginTeacher_user_password"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="96dp"
-        android:fontFamily="serif-monospace"
-        android:gravity="center"
-        android:text="Attempt Left:"
-        android:textColor="@color/grey"
-        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/signTeacher_studQualification"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@+id/signTeacher_studPhone"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/customize_inputs"
+        android:ems="15"
+        android:hint="Qualification"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey" />
+
+    <EditText
+        android:id="@+id/signTeacher_studEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@+id/signTeacher_studQualification"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/customize_inputs"
+        android:ems="15"
+        android:hint="E-mail"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey" />
+
+    <EditText
+        android:id="@+id/signTeacher_studPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@+id/signTeacher_studEmail"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/customize_inputs"
+        android:ems="15"
+        android:hint="Create Password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/signTeacher_studButton"
         android:layout_width="135dp"
         android:layout_height="42dp"
-        android:layout_below="@+id/loginTeacher_user_password"
+        android:layout_below="@+id/signTeacher_studPassword"
         android:layout_alignParentStart="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="26dp"
         android:background="@drawable/custumbuttons"
         android:fontFamily="monospace"
-        android:text="Login"
+        android:text="Register"
         android:textColor="@color/white"
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/forgetPwdLog"
+        android:id="@+id/needHelpRegisTeacher"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginTeacher_user_password"
-        android:layout_alignEnd="@+id/loginTeacher_user_password"
-        android:layout_marginStart="35dp"
+        android:layout_below="@+id/signTeacher_studPassword"
+        android:layout_alignEnd="@+id/signTeacher_studPassword"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="34dp"
         android:layout_toEndOf="@+id/login_button"
         android:fontFamily="@font/bitter"
         android:gravity="end"
         android:textSize="18sp"
-        android:text="Recover Account"
+        android:text="Need Help?"
         android:textColor="@color/red"
         android:textStyle="bold" />
 
@@ -137,17 +161,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bitter"
-            android:text="You are Not a Member?"
+            android:text="Already Have Account?"
             android:textColor="@color/grey"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/ask_for_new_accTeacher"
+            android:id="@+id/already_have_accountTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:fontFamily="@font/bitter"
-            android:text=" Register."
+            android:text="Login."
             android:textColor="@color/red"
             android:textSize="18sp"
             android:textStyle="bold" />
