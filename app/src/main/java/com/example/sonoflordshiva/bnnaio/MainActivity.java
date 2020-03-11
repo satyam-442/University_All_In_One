@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Toolbar mToolbar;
-    private Handler handler;
-    private Runnable runnable;
     CircleImageView imageVHead;
 
     private TextView navProfileName;
