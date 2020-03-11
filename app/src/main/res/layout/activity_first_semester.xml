@@ -21,7 +21,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="160dp"
             android:layout_height="260dp"
             android:layout_margin="10dp">
@@ -62,9 +62,9 @@
                     android:text="All about physics and Gates"
                     android:textColor="#000000" />
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="160dp"
             android:layout_height="260dp"
             android:layout_margin="10dp">
@@ -99,7 +99,7 @@
                     android:padding="5dp"
                     android:textColor="#000000"/>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <LinearLayout
@@ -108,7 +108,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="160dp"
             android:layout_height="260dp"
             android:layout_margin="10dp">
@@ -148,9 +148,9 @@
                     android:text="All about Mathematics and Stats"
                     android:textColor="#000000" />
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="160dp"
             android:layout_height="260dp"
             android:layout_margin="10dp">
@@ -185,11 +185,11 @@
                     android:padding="5dp"
                     android:textColor="#000000"/>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="190dp"
         android:layout_height="260dp"
         android:layout_margin="10dp"
@@ -225,7 +225,7 @@
                 android:padding="5dp"
                 android:textColor="#000000"/>
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
 

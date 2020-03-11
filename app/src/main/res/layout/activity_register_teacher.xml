@@ -56,7 +56,7 @@
         android:background="@drawable/customize_inputs"
         android:ems="15"
         android:hint="Name"
-        android:inputType="phone"
+        android:inputType="textPersonName"
         android:labelFor="@id/login_user_name"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -74,7 +74,7 @@
         android:background="@drawable/customize_inputs"
         android:ems="15"
         android:hint="Contact no."
-        android:inputType="textPassword"
+        android:inputType="phone"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
 
@@ -91,7 +91,7 @@
         android:background="@drawable/customize_inputs"
         android:ems="15"
         android:hint="Qualification"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
 
@@ -108,7 +108,7 @@
         android:background="@drawable/customize_inputs"
         android:ems="15"
         android:hint="E-mail"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
 

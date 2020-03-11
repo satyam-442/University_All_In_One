@@ -36,6 +36,8 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity
@@ -51,9 +53,10 @@ public class MainActivity extends AppCompatActivity
     private TextView navProfileName;
     private Button mainPageButton;
 
+    private FirebaseUser fUser;
     private FirebaseAuth mAuth;
     private DatabaseReference UserRef;
-    String currentUserId;
+    private String currentUserId;
     Dialog connectionDailog;
 
 
@@ -84,8 +87,11 @@ public class MainActivity extends AppCompatActivity
         }*/
 
         mAuth = FirebaseAuth.getInstance();
-        currentUserId = mAuth.getCurrentUser().getUid();
-        UserRef= FirebaseDatabase.getInstance().getReference().child("Students");
+        fUser = mAuth.getCurrentUser();
+
+        //currentUserId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        //currentUserId = fUser.getUid();
+        UserRef= FirebaseDatabase.getInstance().getReference().child("Students").child(mAuth.getCurrentUser().getUid());
 
         connectionDailog = new Dialog(this);
 
@@ -144,7 +150,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        UserRef.child(currentUserId).addValueEventListener(new ValueEventListener()
+        UserRef.addValueEventListener(new ValueEventListener()
         {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
@@ -330,7 +336,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+    /*@Override
     protected void onStart()
     {
         super.onStart();
@@ -343,7 +349,7 @@ public class MainActivity extends AppCompatActivity
         {
             CheckUserExistance();
         }
-    }
+    }*/
 
     private void CheckUserExistance()
     {
@@ -353,7 +359,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                if(!dataSnapshot.hasChild(currentUserId))
+                if(!dataSnapshot.hasChild(mAuth.getCurrentUser().getUid()))
                 {
                     SendUserToSetupActivity();
                 }

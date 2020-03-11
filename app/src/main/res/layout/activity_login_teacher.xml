@@ -78,6 +78,19 @@
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
 
+    <com.rey.material.widget.CheckBox
+        android:id="@+id/loginTeacher_user_rememberMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginTeacher_user_password"
+        android:layout_marginTop="10dp"
+        android:text="Remember Me."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:layout_alignStart="@+id/loginTeacher_user_password"
+        android:layout_alignEnd="@+id/loginTeacher_user_password"/>
+
     <TextView
         android:id="@+id/attempt_leftTeacher"
         android:layout_width="160dp"
@@ -95,10 +108,10 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/login_buttonTeacher"
         android:layout_width="135dp"
         android:layout_height="42dp"
-        android:layout_below="@+id/loginTeacher_user_password"
+        android:layout_below="@+id/loginTeacher_user_rememberMe"
         android:layout_alignParentStart="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="26dp"
@@ -110,12 +123,12 @@
 
     <TextView
         android:id="@+id/forgetPwdLog"
-        android:layout_width="130dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginTeacher_user_password"
+        android:layout_below="@+id/loginTeacher_user_rememberMe"
         android:layout_alignEnd="@+id/loginTeacher_user_password"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/login_button"
         android:fontFamily="@font/bitter"
         android:gravity="end"

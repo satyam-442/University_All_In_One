@@ -33,7 +33,7 @@ public class AdvanceJava extends AppCompatActivity
         setContentView(R.layout.activity_advance_java);
 
         advJavapdfView = (PDFView) findViewById(R.id.adv_java_pdfview);
-        advJavatextView = (TextView) findViewById(R.id.adv_java_textview);
+        //advJavatextView = (TextView) findViewById(R.id.adv_java_textview);
         mref.addValueEventListener(new ValueEventListener()
         {
             @Override

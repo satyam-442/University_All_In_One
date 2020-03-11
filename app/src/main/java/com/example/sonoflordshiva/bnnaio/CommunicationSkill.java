@@ -33,7 +33,7 @@ public class CommunicationSkill extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_communication_skill);
         pdfView = (PDFView) findViewById(R.id.communication_pdfview);
-        imperativeTextview = (TextView) findViewById(R.id.communication_textview);
+        //imperativeTextview = (TextView) findViewById(R.id.communication_textview);
         mref.addValueEventListener(new ValueEventListener()
         {
             @Override

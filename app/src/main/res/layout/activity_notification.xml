@@ -17,11 +17,11 @@
         android:layout_height="match_parent"
         android:layout_below="@id/notify_toolbar">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/all_notification"
             android:layout_width="match_parent"
             android:layout_height="600dp">
 
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
     </FrameLayout>
 </RelativeLayout>

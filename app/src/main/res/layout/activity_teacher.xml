@@ -44,11 +44,11 @@
             android:src="@drawable/search"/>
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_teacher_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/linear_search">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
