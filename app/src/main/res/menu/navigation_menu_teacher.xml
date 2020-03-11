@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"/>
+
+    <item
+        android:id="@+id/nav_setting"
+        android:title="Settings"
+        android:icon="@drawable/settings"/>
+
+    <item
+        android:id="@+id/nav_discuss"
+        android:title="Discuss"
+        android:icon="@drawable/question"/>
+
+    <item
+        android:id="@+id/nav_contact"
+        android:title="Contact Us"
+        android:icon="@drawable/contacts"/>
+
+    <item
+        android:id="@+id/nav_about"
+        android:title="About Us"
+        android:icon="@drawable/aboutus"/>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Logout"
+        android:icon="@drawable/logout"/>
+</menu>
