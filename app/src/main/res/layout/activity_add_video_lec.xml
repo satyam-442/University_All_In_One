@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AsTeacher.AddVideoLecActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload Lecture Video"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/alegreya"
+        android:id="@+id/textHeader"/>
+
+    <VideoView
+        android:id="@+id/uploadVideoPreview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textHeader"/>
+
+    <Button
+        android:id="@+id/uploadVideoSelectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/uploadVideoPreview"
+        android:text="Click here to select video"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:elevation="15dp"/>
+
+    <EditText
+        android:id="@+id/uploadVideoDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploadVideoSelectButton"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:hint="Short description about video."/>
+
+    <EditText
+        android:id="@+id/uploadVideoSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploadVideoDescription"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:hint="Subject of Lecture"/>
+
+    <Button
+        android:id="@+id/uploadVideoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/uploadVideoSubject"
+        android:text="Upload video"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:elevation="15dp"/>
+
+</RelativeLayout>

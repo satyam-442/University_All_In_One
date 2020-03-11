@@ -62,7 +62,7 @@ public class TeacherMainActivity extends AppCompatActivity
 
     TextView titleTv;
     LinearLayout messageTv;
-    CardView displayConnPopupImage, syllabusPage,pptpage,videolecturespage,blogpage,questionspage,feddbackpage;
+    CardView displayConnPopupImage, syllabusPage,pptpage,addVideoLecturesPage,blogpage,questionspage,feddbackpage;
 
     //EditText addQuery,addSubject, addComment;
     Button btnCloseApp;
@@ -115,6 +115,15 @@ public class TeacherMainActivity extends AppCompatActivity
             {
                 UserMenuSelector(item);
                 return false;
+            }
+        });
+
+        addVideoLecturesPage = (CardView) findViewById(R.id.addVideoLectures);
+        addVideoLecturesPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addLectures = new Intent(TeacherMainActivity.this, AddVideoLecActivity.class);
+                startActivity(addLectures);
             }
         });
 
