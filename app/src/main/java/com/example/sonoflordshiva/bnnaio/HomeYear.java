@@ -111,7 +111,7 @@ public class HomeYear extends AppCompatActivity
         });
 
 
-        firstSem = findViewById(R.id.firstSemester);
+       /* firstSem = findViewById(R.id.firstSemester);
         secondSem = findViewById(R.id.secondSemester);
         thirdSem = findViewById(R.id.thirdSemester);
         fourthSem = findViewById(R.id.fourthSemester);
@@ -166,7 +166,7 @@ public class HomeYear extends AppCompatActivity
             {
                 SendUserToSixthSemester();
             }
-        });
+        });*/
 
 
         homeNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
