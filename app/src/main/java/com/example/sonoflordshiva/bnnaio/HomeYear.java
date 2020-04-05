@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -30,7 +31,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeYear extends AppCompatActivity
 {
-    private ImageView firstSem, secondSem, thirdSem, fourthSem, fifthSem, sixthSem;
+    private CardView firstSem, secondSem, thirdSem, fourthSem, fifthSem, sixthSem;
     private NavigationView homeNavigationView;
     private DrawerLayout homeDrawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -111,12 +112,12 @@ public class HomeYear extends AppCompatActivity
         });
 
 
-        firstSem = findViewById(R.id.firstSemester);
-        secondSem = findViewById(R.id.secondSemester);
-        thirdSem = findViewById(R.id.thirdSemester);
-        fourthSem = findViewById(R.id.fourthSemester);
-        fifthSem = findViewById(R.id.fifthSemester);
-        sixthSem = findViewById(R.id.sixthSemester);
+       firstSem =(CardView) findViewById(R.id.sem1);
+        secondSem =(CardView) findViewById(R.id.sem2);
+        thirdSem = (CardView) findViewById(R.id.sem3);
+        fourthSem = (CardView) findViewById(R.id.sem4);
+        fifthSem = (CardView) findViewById(R.id.sem5);
+        sixthSem = (CardView) findViewById(R.id.sem6);
 
         firstSem.setOnClickListener(new View.OnClickListener()
         {
