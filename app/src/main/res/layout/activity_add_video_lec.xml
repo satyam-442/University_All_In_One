@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AsTeacher.AddVideoLecActivity">
+    tools:context=".AsTeacher.AddVideoLecActivity"
+    android:background="@drawable/image_visiblity">
 
     <TextView
         android:layout_width="match_parent"
@@ -32,13 +33,15 @@
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_below="@id/uploadVideoPreview"
-        android:text="Click here to select video"
+        android:text="s e l e c t   v i d e o"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:elevation="15dp"/>
+        android:elevation="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/addvideobutton"/>
 
     <EditText
         android:id="@+id/uploadVideoTitle"
@@ -47,7 +50,7 @@
         android:layout_below="@id/uploadVideoSelectButton"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:hint="Short description about video."
+        android:hint="Video Title."
         android:layout_marginTop="20dp"/>
 
     <EditText
@@ -58,7 +61,10 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:hint="Short description about video."
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="top"
+        android:lines="5"/>
 
     <EditText
         android:id="@+id/uploadVideoSubject"
@@ -75,12 +81,14 @@
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_below="@id/uploadVideoSubject"
-        android:text="Upload video"
+        android:text="U p l o a d   v i d e o"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:gravity="center"
-        android:elevation="15dp"/>
+        android:elevation="15dp"
+        android:textColor="#fff"
+        android:background="@drawable/addvideobutton"/>
 
 </RelativeLayout>

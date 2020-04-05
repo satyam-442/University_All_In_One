@@ -160,7 +160,7 @@ public class AddVideoLecActivity extends AppCompatActivity
 
             uploadVideoId = saveCurrentDate + saveCurrentTime;
 
-            final StorageReference fileReference = mStorageRef.child(title + ".jpeg");
+            final StorageReference fileReference = mStorageRef.child(title + ".mp4");
             uploadTask = fileReference.putFile(videoUri);
             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
             {
