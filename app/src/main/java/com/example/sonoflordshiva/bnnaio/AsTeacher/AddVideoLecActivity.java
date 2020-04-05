@@ -23,6 +23,7 @@ import android.widget.VideoView;
 
 import com.example.sonoflordshiva.bnnaio.R;
 import com.example.sonoflordshiva.bnnaio.Setting;
+import com.example.sonoflordshiva.bnnaio.SetupActivity;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,6 +37,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class AddVideoLecActivity extends AppCompatActivity
@@ -46,10 +49,10 @@ public class AddVideoLecActivity extends AppCompatActivity
     VideoView uploadVideoPreview;
     Uri videoUri;
     MediaController videoPreviewController;
-    EditText uploadVideoDescription, uploadVideoSubject;
+    EditText uploadVideoDescription, uploadVideoSubject, uploadVideoTitle;
     StorageReference mStorageRef;
     StorageTask uploadTask;
-    String current_user_id;
+    String current_user_id, uploadVideoId = "";
     FirebaseAuth mAuth;
     DatabaseReference uploadedVideoRef;
     ProgressDialog loadingBar;
@@ -61,27 +64,32 @@ public class AddVideoLecActivity extends AppCompatActivity
         setContentView(R.layout.activity_add_video_lec);
 
         mAuth = FirebaseAuth.getInstance();
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+        mStorageRef = FirebaseStorage.getInstance().getReference("VideoLectures");
         uploadedVideoRef = FirebaseDatabase.getInstance().getReference();
         //current_user_id = mAuth.getCurrentUser().getUid();
 
         uploadVideoDescription = (EditText) findViewById(R.id.uploadVideoDescription);
         uploadVideoSubject = (EditText) findViewById(R.id.uploadVideoSubject);
+        uploadVideoTitle = (EditText) findViewById(R.id.uploadVideoTitle);
 
         loadingBar = new ProgressDialog(this);
 
         uploadVideoSelectButton = (Button) findViewById(R.id.uploadVideoSelectButton);
-        uploadVideoSelectButton.setOnClickListener(new View.OnClickListener() {
+        uploadVideoSelectButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 SelectVideoToPreview();
             }
         });
 
         uploadVideoButton = (Button) findViewById(R.id.uploadVideoButton);
-        uploadVideoButton.setOnClickListener(new View.OnClickListener() {
+        uploadVideoButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 UploadVideoToFirebaseStorage();
             }
         });
@@ -108,18 +116,51 @@ public class AddVideoLecActivity extends AppCompatActivity
         uploadVideoPreview.start();
     }
 
+    private void SelectVideoToPreview()
+    {
+        Intent vv = new Intent();
+        vv.setType("video/*");
+        vv.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(vv,"Select a video"), PICK_VIDEO_INTENT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_VIDEO_INTENT && resultCode == RESULT_OK && data != null)
+        {
+            videoUri = data.getData();
+            uploadVideoPreview.setVideoURI(videoUri);
+        }
+    }
+
     private void UploadVideoToFirebaseStorage()
     {
         //VALIDATE EDITTEXT FIELD's
         final String description = uploadVideoDescription.getText().toString();
         final String subject = uploadVideoSubject.getText().toString();
-        if (TextUtils.isEmpty(description) && TextUtils.isEmpty(subject))
+        final String title = uploadVideoTitle.getText().toString();
+        if (TextUtils.isEmpty(description) && TextUtils.isEmpty(subject) && TextUtils.isEmpty(title))
         {
             Toast.makeText(this, "Field's are empty.", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            final StorageReference fileReference = mStorageRef.child("Video_Lectures").child(current_user_id + getFileExtension(videoUri));
+            loadingBar.setMessage("please wait...");
+            loadingBar.setCanceledOnTouchOutside(true);
+            loadingBar.show();
+            final String saveCurrentTime, saveCurrentDate;
+            Calendar calForDate = Calendar.getInstance();
+            SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+            saveCurrentDate = currentDate.format(calForDate.getTime());
+
+            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+            saveCurrentTime = currentTime.format(calForDate.getTime());
+
+            uploadVideoId = saveCurrentDate + saveCurrentTime;
+
+            final StorageReference fileReference = mStorageRef.child(title + ".jpeg");
             uploadTask = fileReference.putFile(videoUri);
             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
             {
@@ -142,13 +183,34 @@ public class AddVideoLecActivity extends AppCompatActivity
                         Uri downloadUri = task.getResult();
                         String mUri = downloadUri.toString();
                         String current_uid = mAuth.getUid();
-                        uploadedVideoRef = FirebaseDatabase.getInstance().getReference("VideoLectures").child(current_uid);
+                        uploadedVideoRef = FirebaseDatabase.getInstance().getReference("VideoLectures").child(uploadVideoId);
                         HashMap<String, Object> map = new HashMap<>();
                         map.put("video", mUri);
                         map.put("description", description);
                         map.put("subject", subject);
-                        uploadedVideoRef.updateChildren(map);
-                        loadingBar.dismiss();
+                        map.put("title", title);
+                        map.put("date", saveCurrentDate);
+                        map.put("time", saveCurrentTime);
+                        map.put("videoId", uploadVideoId);
+                        uploadedVideoRef.updateChildren(map).addOnCompleteListener(new OnCompleteListener()
+                        {
+                            @Override
+                            public void onComplete(@NonNull Task task)
+                            {
+                                if(task.isSuccessful())
+                                {
+                                    SendUserToTeacherMainActivity();
+                                    Toast.makeText(AddVideoLecActivity.this, "Video Uploaded Successfully...", Toast.LENGTH_LONG).show();
+                                    loadingBar.dismiss();
+                                }
+                                else
+                                {
+                                    String message = task.getException().getMessage();
+                                    Toast.makeText(AddVideoLecActivity.this, "Error Occurred:" + message, Toast.LENGTH_SHORT).show();
+                                    loadingBar.dismiss();
+                                }
+                            }
+                        });
                     }
                     else
                     {
@@ -160,30 +222,18 @@ public class AddVideoLecActivity extends AppCompatActivity
             }).addOnFailureListener(new OnFailureListener()
             {
                 @Override
-                public void onFailure(@NonNull Exception exception) {
-                    Toast.makeText(AddVideoLecActivity.this, "Error Occurred!", Toast.LENGTH_SHORT).show();
+                public void onFailure(@NonNull Exception exception)
+                {
+                    Toast.makeText(AddVideoLecActivity.this, "Error Occurred!" + exception, Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
 
-    private void SelectVideoToPreview()
-    {
-        Intent vv = new Intent();
-        vv.setType("video/*");
-        vv.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(vv,"Select a video"), PICK_VIDEO_INTENT);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
-    {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_VIDEO_INTENT && resultCode == RESULT_OK && data != null)
-        {
-            videoUri = data.getData();
-            uploadVideoPreview.setVideoURI(videoUri);
-        }
+    private void SendUserToTeacherMainActivity() {
+        Intent startMain = new Intent(this, TeacherMainActivity.class);
+        startActivity(startMain);
+        finish();
     }
 
     public String getFileExtension(Uri uri)
