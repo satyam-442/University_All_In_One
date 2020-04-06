@@ -2,8 +2,10 @@ package com.example.sonoflordshiva.bnnaio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,13 +15,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sonoflordshiva.bnnaio.Model.Video;
+import com.example.sonoflordshiva.bnnaio.ViewHolder.VideoViewHolder;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
@@ -37,6 +47,12 @@ public class VideoLectures extends AppCompatActivity {
     DatabaseReference UserRef;
     String currentUserId;
     CircleImageView imageVHead;
+
+    DatabaseReference UserRefTwo, productRef;
+    String userId;
+    MyReciever myReciever;
+    RecyclerView productsRec;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +134,65 @@ public class VideoLectures extends AppCompatActivity {
             }
         });
 
+        productsRec = findViewById(R.id.videoRecView);
+        productsRec.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        productsRec.setLayoutManager(layoutManager);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        startListening();
+    }
+
+    private void startListening()
+    {
+        Query query = FirebaseDatabase.getInstance().getReference().child("VideoLectures").limitToLast(50);
+        FirebaseRecyclerOptions<Video> options = new FirebaseRecyclerOptions.Builder<Video>().setQuery(query,Video.class).build();
+        FirebaseRecyclerAdapter<Video, VideoViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Video, VideoViewHolder>(options)
+        {
+            @Override
+            protected void onBindViewHolder(@NonNull VideoViewHolder videoViewHolder, final int i, @NonNull final Video video)
+            {
+                videoViewHolder.txtBlogTitle.setText(video.getTitlee());
+                videoViewHolder.txtBlogUsername.setText(video.getTeacherNamee());
+                videoViewHolder.txtBlogSubject.setText(video.getSubjectt());
+                videoViewHolder.txtBlogDate.setText(video.getDatee());
+                videoViewHolder.txtBlogTime.setText(video.getTimee());
+
+                //Picasso.with(getActivity()).load(product.getImagee()).into(productViewHolder.imageView);
+
+                videoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        /*Intent intent = new Intent(getActivity(),ProductDetailsActivity.class);
+                        intent.putExtra("pid",product.getPidd());
+                        startActivity(intent);*/
+                        /*ProductDetailsFragment productDetailsFragment = new ProductDetailsFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("pid",product.getPidd());
+                        bundle.putString("uid",userId);
+                        bundle.putString("imageUrl",product.getImagee());
+                        productDetailsFragment.setArguments(bundle);
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.main_container,productDetailsFragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();*/
+                    }
+                });
+            }
+            @NonNull
+            @Override
+            public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_blog_layout,parent,false);
+                VideoViewHolder holder = new VideoViewHolder(view);
+                return holder;
+            }
+        };
+        productsRec.setAdapter(firebaseRecyclerAdapter);
+        firebaseRecyclerAdapter.startListening();
     }
 
     @Override

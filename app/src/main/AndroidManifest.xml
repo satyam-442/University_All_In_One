@@ -23,14 +23,16 @@
         <activity
             android:name=".WelcomeActivity"
             android:screenOrientation="fullSensor"></activity>
+
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".PreviousActivity" />
+        <activity android:name=".VideoLectures" />
         <activity android:name=".UnsolvedQuery" />
         <activity android:name=".MyQueryActivity" />
         <activity android:name=".TeacherActivity" />
@@ -122,5 +124,4 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
     </application>
-
 </manifest>

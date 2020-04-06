@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.example.sonoflordshiva.bnnaio.Prevalent.Prevalent;
 import com.example.sonoflordshiva.bnnaio.R;
 import com.example.sonoflordshiva.bnnaio.Setting;
 import com.example.sonoflordshiva.bnnaio.SetupActivity;
@@ -186,6 +187,7 @@ public class AddVideoLecActivity extends AppCompatActivity
                         uploadedVideoRef = FirebaseDatabase.getInstance().getReference("VideoLectures").child(uploadVideoId);
                         HashMap<String, Object> map = new HashMap<>();
                         map.put("video", mUri);
+                        map.put("teacherName", Prevalent.currentOnlineUser.getNamee());
                         map.put("description", description);
                         map.put("subject", subject);
                         map.put("title", title);
