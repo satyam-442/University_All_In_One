@@ -159,7 +159,8 @@ public class AddVideoLecActivity extends AppCompatActivity
             SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
             saveCurrentTime = currentTime.format(calForDate.getTime());
 
-            uploadVideoId = saveCurrentDate + saveCurrentTime;
+            //uploadVideoId = saveCurrentDate + saveCurrentTime;
+            uploadVideoId = videoUri.getLastPathSegment() + saveCurrentDate + saveCurrentTime;
 
             final StorageReference fileReference = mStorageRef.child(title + ".mp4");
             uploadTask = fileReference.putFile(videoUri);

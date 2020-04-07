@@ -462,8 +462,6 @@ public class QuestionActivity extends AppCompatActivity
                         {
                             if(task.isSuccessful())
                             {
-
-
                                 UnsolveQueryRef.child(current_user_id + randonName).updateChildren(queryMap).addOnCompleteListener(new OnCompleteListener()
                                 {
                                     @Override
