@@ -44,11 +44,13 @@
                     android:layout_height="180dp"
                     android:layout_margin="12dp"
                     app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
                     app:cardBackgroundColor="#FF9800">
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back6">
 
                     </ImageView>
 
@@ -90,11 +92,13 @@
                     android:layout_height="178dp"
                     android:layout_margin="12dp"
                     app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
                     app:cardBackgroundColor="#CF1616">
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back7">
 
                     </ImageView>
 
@@ -138,11 +142,13 @@
                         android:layout_height="180dp"
                         android:layout_margin="12dp"
                         app:cardElevation="6dp"
+                        app:cardCornerRadius="8dp"
                         app:cardBackgroundColor="#3F51B5">
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/back8">
 
                         </ImageView>
 
@@ -184,11 +190,13 @@
                             android:layout_height="180dp"
                             android:layout_margin="12dp"
                             app:cardElevation="6dp"
+                            app:cardCornerRadius="8dp"
                             app:cardBackgroundColor="#4CAF50">
 
                             <ImageView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:background="@drawable/back10">
 
                             </ImageView>
 
@@ -234,11 +242,13 @@
                         android:layout_height="180dp"
                         android:layout_margin="12dp"
                         app:cardElevation="6dp"
+                        app:cardCornerRadius="8dp"
                         app:cardBackgroundColor="#F4511E">
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/back5">
 
                         </ImageView>
 
@@ -277,11 +287,13 @@
                             android:layout_height="180dp"
                             android:layout_margin="12dp"
                             app:cardElevation="6dp"
+                            app:cardCornerRadius="8dp"
                             app:cardBackgroundColor="#475353">
 
                             <ImageView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:background="@drawable/back7">
                             </ImageView>
 
                             <TextView
