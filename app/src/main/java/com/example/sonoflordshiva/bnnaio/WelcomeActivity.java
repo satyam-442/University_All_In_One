@@ -70,7 +70,7 @@ public class WelcomeActivity extends AppCompatActivity
             }
         });
 
-        String UserPhoneKey = Paper.book().read(Prevalent.userPhoneKey);
+        /*String UserPhoneKey = Paper.book().read(Prevalent.userPhoneKey);
         String UserPasswordKey = Paper.book().read(Prevalent.userPasswordKey);
         if (UserPhoneKey != "" && UserPasswordKey != "")
         {
@@ -78,7 +78,7 @@ public class WelcomeActivity extends AppCompatActivity
             {
                 AllowAccessToAccount(UserPhoneKey,UserPasswordKey);
             }
-        }
+        }*//**/
     }
 
     private void AllowAccessToAccount(final String phone,final String password) {
