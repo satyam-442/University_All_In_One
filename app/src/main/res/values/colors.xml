@@ -7,4 +7,13 @@
     <color name="red">#C40101</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="orange">#ff563f</color>
+    <color name="fb_blue">#475993</color>
+    <color name="edit_text_hint">#999999</color>
+    <color name="edit_text_txt">#999999</color>
+    <color name="edit_text_bg">#f5f5f5</color>
+    <color name="divider">#f5f5f5</color>
+    <color name="divider_or">#999999</color>
+    <color name="account">#999999</color>
+
 </resources>

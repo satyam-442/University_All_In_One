@@ -146,21 +146,31 @@ public class AddVideoLecActivity extends AppCompatActivity
         {
             Toast.makeText(this, "Field's are empty.", Toast.LENGTH_SHORT).show();
         }
+        else if(description.length() < 100)
+        {
+            Toast.makeText(this, "Description too short", Toast.LENGTH_LONG).show();
+        }
+        else if(description.length() < 101 && description.length() < 250)
+        {
+            Toast.makeText(this, "Add more words to Description", Toast.LENGTH_LONG).show();
+        }
         else
         {
             loadingBar.setMessage("please wait...");
             loadingBar.setCanceledOnTouchOutside(true);
             loadingBar.show();
             final String saveCurrentTime, saveCurrentDate;
+
             Calendar calForDate = Calendar.getInstance();
             SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
             saveCurrentDate = currentDate.format(calForDate.getTime());
 
-            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-            saveCurrentTime = currentTime.format(calForDate.getTime());
+            Calendar calForTime = Calendar.getInstance();
+            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
+            saveCurrentTime = currentTime.format(calForTime.getTime());
 
-            //uploadVideoId = saveCurrentDate + saveCurrentTime;
-            uploadVideoId = videoUri.getLastPathSegment() + saveCurrentDate + saveCurrentTime;
+            uploadVideoId = saveCurrentDate + saveCurrentTime;
+            //uploadVideoId = videoUri.getLastPathSegment() + saveCurrentDate + saveCurrentTime;
 
             final StorageReference fileReference = mStorageRef.child(title + ".mp4");
             uploadTask = fileReference.putFile(videoUri);

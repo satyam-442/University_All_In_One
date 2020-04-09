@@ -15,22 +15,22 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AsTeacher.AddVideoLecActivity"></activity>
+        <activity android:name=".ReadBlogActivity"></activity>
+        <activity android:name=".AsTeacher.AddVideoLecActivity" />
         <activity android:name=".AsTeacher.TeacherMainActivity" />
         <activity android:name=".AsTeacher.RegisterTeacher" />
         <activity android:name=".AsTeacher.LoginTeacher" />
         <activity android:name=".DemoFile" />
         <activity
             android:name=".WelcomeActivity"
-            android:screenOrientation="fullSensor"></activity>
-
+            android:screenOrientation="fullSensor" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".PreviousActivity" />
         <activity android:name=".Questions" />
         <activity android:name=".Feedback" />
@@ -128,4 +128,5 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
     </application>
+
 </manifest>

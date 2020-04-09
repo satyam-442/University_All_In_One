@@ -45,14 +45,13 @@ public class VideoLectures extends AppCompatActivity {
     private TextView homeNavProfileName;
     FirebaseAuth mAuth;
     DatabaseReference UserRef;
-    String currentUserId;
+    String currentUserId, videoId ="";
     CircleImageView imageVHead;
 
     DatabaseReference UserRefTwo, productRef;
-    String userId;
     MyReciever myReciever;
     RecyclerView productsRec;
-    RecyclerView.LayoutManager layoutManager;
+    LinearLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +59,11 @@ public class VideoLectures extends AppCompatActivity {
         setContentView(R.layout.activity_video_lectures);
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
-        UserRef= FirebaseDatabase.getInstance().getReference().child("Students");
 
+        Video vidId = new Video();
+        videoId = vidId.getVideoIdd();
+
+        UserRef= FirebaseDatabase.getInstance().getReference().child("Students");
 
         mToolbar = (Toolbar) findViewById(R.id.videolectures_page_toolbar);
         setSupportActionBar(mToolbar);
@@ -137,6 +139,8 @@ public class VideoLectures extends AppCompatActivity {
         productsRec = findViewById(R.id.videoRecView);
         productsRec.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
         productsRec.setLayoutManager(layoutManager);
     }
 
@@ -148,7 +152,9 @@ public class VideoLectures extends AppCompatActivity {
 
     private void startListening()
     {
-        Query query = FirebaseDatabase.getInstance().getReference().child("VideoLectures").limitToLast(50);
+        //Query query = FirebaseDatabase.getInstance().getReference("VideoLectures");
+        Query query = FirebaseDatabase.getInstance().getReference("VideoLectures").orderByChild("time").limitToFirst(50);
+        //Query query = FirebaseDatabase.getInstance().getReference("VideoLectures").child(videoId).orderByChild("time").limitToLast(50);
         FirebaseRecyclerOptions<Video> options = new FirebaseRecyclerOptions.Builder<Video>().setQuery(query,Video.class).build();
         FirebaseRecyclerAdapter<Video, VideoViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Video, VideoViewHolder>(options)
         {
@@ -158,12 +164,13 @@ public class VideoLectures extends AppCompatActivity {
                 videoViewHolder.txtBlogTitle.setText(video.getTitlee());
                 videoViewHolder.txtBlogUsername.setText(video.getTeacherNamee());
                 videoViewHolder.txtBlogSubject.setText(video.getSubjectt());
-                videoViewHolder.txtBlogDate.setText(video.getDatee());
-                videoViewHolder.txtBlogTime.setText(video.getTimee());
+                videoViewHolder.txtBlogDate.setText("         " + video.getDatee());
+                videoViewHolder.txtBlogTime.setText("         " + video.getTimee());
 
                 //Picasso.with(getActivity()).load(product.getImagee()).into(productViewHolder.imageView);
 
-                videoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                videoViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+                {
                     @Override
                     public void onClick(View v)
                     {
