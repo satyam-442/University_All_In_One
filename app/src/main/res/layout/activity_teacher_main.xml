@@ -148,7 +148,7 @@
                                 android:orientation="horizontal">
 
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/blogs"
+                                    android:id="@+id/addBlog"
                                     android:clickable="true"
                                     android:layout_width="195dp"
                                     android:layout_height="195dp"

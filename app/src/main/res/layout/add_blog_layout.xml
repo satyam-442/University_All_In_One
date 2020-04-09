@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="false">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#fff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/closePopupImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="7dp"
+                        android:src="@drawable/close" />
+
+                    <TextView
+                        android:id="@+id/titleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/bitter"
+                        android:hint="Add a New Blog"
+                        android:padding="10dp"
+                        android:textAlignment="center"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/messageTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Tips for writing a good blog"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/checkmark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Make sure that you don't repeat the topic"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/checkmark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Keep your blog enough and to point"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/checkmark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Avoid spelling mistakes and Grammatical errors"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25sp"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/popupProfileImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="7dp"
+                        android:src="@drawable/default_avatar" />
+
+                    <TextView
+                        android:id="@+id/popupProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="Your Name Here..."
+                        android:padding="10dp"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/popupBlogWordCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="word count"
+                        android:padding="10dp"
+                        android:textSize="17sp"
+                        android:layout_marginStart="25dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/popupBlogTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Your blog title here..."
+                        android:padding="10dp"
+                        android:textSize="17sp"
+                        android:inputType="text"
+                        android:scrollbars="vertical"/>
+
+                    <EditText
+                        android:id="@+id/popupBlogDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Your blog here..."
+                        android:padding="10dp"
+                        android:textSize="17sp"
+                        android:lines="5"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:scrollbars="vertical"/>
+
+                    <EditText
+                        android:id="@+id/popupBlogSubject"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Respective Subject"
+                        android:padding="10dp"
+                        android:textSize="17sp"
+                        android:inputType="text"
+                        android:scrollbars="vertical"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50sp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnSendBlog"
+                        style="@android:style/Widget.Material.Button.Toggle"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:text="Add"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        android:layout_marginStart="250dp"
+                        android:background="@drawable/buttons"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
