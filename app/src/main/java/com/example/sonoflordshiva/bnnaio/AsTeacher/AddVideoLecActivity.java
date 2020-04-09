@@ -148,9 +148,9 @@ public class AddVideoLecActivity extends AppCompatActivity
         }
         else if(description.length() < 100)
         {
-            Toast.makeText(this, "Description too short", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Description too short(at least 250-300 words)", Toast.LENGTH_LONG).show();
         }
-        else if(description.length() < 101 && description.length() < 250)
+        else if(description.length() > 101 && description.length() < 250)
         {
             Toast.makeText(this, "Add more words to Description", Toast.LENGTH_LONG).show();
         }
