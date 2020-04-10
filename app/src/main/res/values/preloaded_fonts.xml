@@ -2,7 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alegreya_sc_bold</item>
+        <item>@font/cagliostro</item>
         <item>@font/chewy</item>
         <item>@font/pacifico</item>
+        <item>@font/prompt_medium</item>
     </array>
 </resources>
