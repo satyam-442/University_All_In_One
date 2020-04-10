@@ -77,7 +77,7 @@ public class AddBlogActivity extends AppCompatActivity
         setContentView(R.layout.activity_add_blog);
 
         mAuth = FirebaseAuth.getInstance();
-        current_user_id = Prevalent.currentOnlineUser.getPhonee();
+        current_user_id = Prevalent.currentOnlineUser.getNamee() + Prevalent.currentOnlineUser.getPhonee();
         /*mUser = FirebaseAuth.getInstance().getCurrentUser();*/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -259,7 +259,7 @@ public class AddBlogActivity extends AppCompatActivity
         final SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
         saveCurrentTime = currentTime.format(callForTime.getTime());
 
-        randonName = saveCurrentDate + saveCurrentTime;
+        randonName = current_user_id + saveCurrentDate + saveCurrentTime;
 
         BlogsRef.child(randonName).addValueEventListener(new ValueEventListener()
         {
@@ -268,6 +268,7 @@ public class AddBlogActivity extends AppCompatActivity
             {
                 final HashMap queryMap = new HashMap();
                 queryMap.put("uid", current_user_id);
+                queryMap.put("blogId", randonName);
                 queryMap.put("date", saveCurrentDate);
                 queryMap.put("time", saveCurrentTime);
                 queryMap.put("title", title);
@@ -275,7 +276,7 @@ public class AddBlogActivity extends AppCompatActivity
                 queryMap.put("subject", subject);
                 queryMap.put("Fullname", Prevalent.currentOnlineUser.getNamee());
                 queryMap.put("counter",countQuery);
-                BlogsRef.child(current_user_id + randonName).updateChildren(queryMap).addOnCompleteListener(new OnCompleteListener()
+                BlogsRef.child(randonName).updateChildren(queryMap).addOnCompleteListener(new OnCompleteListener()
                 {
                     @Override
                     public void onComplete(@NonNull Task task)
@@ -312,9 +313,9 @@ public class AddBlogActivity extends AppCompatActivity
                         }
                         else
                         {
-                                /*String mess = task.getException().getMessage();
-                                Toast.makeText(QuestionActivity.this, "Error Occured :" + mess, Toast.LENGTH_SHORT).show();
-                                loadingBar.dismiss();*/
+                            /*String mess = task.getException().getMessage();
+                            Toast.makeText(QuestionActivity.this, "Error Occured :" + mess, Toast.LENGTH_SHORT).show();
+                            loadingBar.dismiss();*/
                             String mess = task.getException().getMessage();
                             Toast.makeText(AddBlogActivity.this, "Error Occured :" + mess, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();

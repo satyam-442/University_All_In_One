@@ -18,7 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sonoflordshiva.bnnaio.Model.Blogs;
 import com.example.sonoflordshiva.bnnaio.Model.Video;
+import com.example.sonoflordshiva.bnnaio.ViewHolder.BlogViewHolder;
 import com.example.sonoflordshiva.bnnaio.ViewHolder.VideoViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -151,29 +153,29 @@ public class BlogActivity extends AppCompatActivity {
     private void startListening()
     {
         //Query query = FirebaseDatabase.getInstance().getReference("VideoLectures");
-        Query query = FirebaseDatabase.getInstance().getReference("VideoLectures").orderByChild("time").limitToFirst(50);
+        Query query = FirebaseDatabase.getInstance().getReference("Blogs")/*.orderByChild("time")*/.limitToFirst(50);
         //Query query = FirebaseDatabase.getInstance().getReference("VideoLectures").child(videoId).orderByChild("time").limitToLast(50);
-        FirebaseRecyclerOptions<Video> options = new FirebaseRecyclerOptions.Builder<Video>().setQuery(query,Video.class).build();
-        FirebaseRecyclerAdapter<Video, VideoViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Video, VideoViewHolder>(options)
+        FirebaseRecyclerOptions<Blogs> options = new FirebaseRecyclerOptions.Builder<Blogs>().setQuery(query,Blogs.class).build();
+        FirebaseRecyclerAdapter<Blogs, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blogs, BlogViewHolder>(options)
         {
             @Override
-            protected void onBindViewHolder(@NonNull VideoViewHolder videoViewHolder, final int i, @NonNull final Video video)
+            protected void onBindViewHolder(@NonNull BlogViewHolder blogViewHolder, final int i, @NonNull final Blogs blogs)
             {
-                videoViewHolder.txtBlogTitle.setText(video.getTitlee());
-                videoViewHolder.txtBlogUsername.setText(video.getTeacherNamee());
-                videoViewHolder.txtBlogSubject.setText(video.getSubjectt());
-                videoViewHolder.txtBlogDate.setText("         " + video.getDatee());
-                videoViewHolder.txtBlogTime.setText("         " + video.getTimee());
+                blogViewHolder.txtBlogTitle.setText(blogs.getTitlee());
+                blogViewHolder.txtBlogUsername.setText(blogs.getFullnamee());
+                blogViewHolder.txtBlogSubject.setText(blogs.getSubjectt());
+                blogViewHolder.txtBlogDate.setText("         " + blogs.getDatee());
+                blogViewHolder.txtBlogTime.setText("         " + blogs.getTimee());
 
                 //Picasso.with(getActivity()).load(product.getImagee()).into(productViewHolder.imageView);
 
-                videoViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+                blogViewHolder.itemView.setOnClickListener(new View.OnClickListener()
                 {
                     @Override
                     public void onClick(View v)
                     {
                         Intent intent = new Intent(BlogActivity.this,ReadBlogActivity.class);
-                        intent.putExtra("blogId",video.getVideoIdd());
+                        intent.putExtra("blogId",blogs.getBlogIdd());
                         startActivity(intent);
                         /*ProductDetailsFragment productDetailsFragment = new ProductDetailsFragment();
                         Bundle bundle = new Bundle();
@@ -190,9 +192,9 @@ public class BlogActivity extends AppCompatActivity {
             }
             @NonNull
             @Override
-            public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public BlogViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_blog_layout,parent,false);
-                VideoViewHolder holder = new VideoViewHolder(view);
+                BlogViewHolder holder = new BlogViewHolder(view);
                 return holder;
             }
         };

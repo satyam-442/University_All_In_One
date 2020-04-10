@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.sonoflordshiva.bnnaio.Model.Blogs;
 import com.example.sonoflordshiva.bnnaio.Model.Video;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -64,7 +66,7 @@ public class ReadBlogActivity extends AppCompatActivity
 
     private void getBlogFullDescription(String blogID)
     {
-        DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("VideoLectures");
+        DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Blogs");
         productRef.child(blogID).addValueEventListener(new ValueEventListener()
         {
             @Override
@@ -72,11 +74,11 @@ public class ReadBlogActivity extends AppCompatActivity
             {
                 if (dataSnapshot.exists())
                 {
-                    Video video = dataSnapshot.getValue(Video.class);
-                    blogRead_titleActivity.setText(video.getTitlee());
-                    blogRead_descriptionActivity.setText(video.getDescriptionn());
-                    blogRead_dateActivity.setText(video.getDatee());
-                    blogRead_timeActivity.setText(video.getTimee());
+                    Blogs blogs = dataSnapshot.getValue(Blogs.class);
+                    blogRead_titleActivity.setText(blogs.getTitlee());
+                    blogRead_descriptionActivity.setText(blogs.getDescriptionn());
+                    blogRead_dateActivity.setText(blogs.getDatee());
+                    blogRead_timeActivity.setText(blogs.getTimee());
                     //Picasso.with(getApplicationContext()).load(product.getImagee()).into(productImage);
                 }
             }
@@ -112,7 +114,7 @@ public class ReadBlogActivity extends AppCompatActivity
             {
                 if (task.isSuccessful())
                 {
-
+                    Toast.makeText(ReadBlogActivity.this, "Blog saved!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
