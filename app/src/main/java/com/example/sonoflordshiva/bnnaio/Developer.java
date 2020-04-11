@@ -17,7 +17,7 @@ public class Developer extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer);
 
-        satyamActFB = (ImageView) findViewById(R.id.satyamFB);
+        /*satyamActFB = (ImageView) findViewById(R.id.satyamFB);
         satyamActFB.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -82,7 +82,7 @@ public class Developer extends AppCompatActivity
                 bnnLink.setData(Uri.parse("https://www.instagram.com/_flirty.insane"));
                 startActivity(bnnLink);
             }
-        });
+        });*/
 
         //SATYAM SOCIAL MEDIA LINKS
 

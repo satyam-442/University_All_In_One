@@ -5,7 +5,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="start_your_query_with">Start your query with \"What\",\"Why\",\"How\",etc.</string>
-    <string name="intro">In the world of technology, it is very outdated to use traditional concept to study as it is not more effective and is more costly. So the system we are going to design is completely based on a new innovation that brings all academic works in a single app. Using this approach will give you the advantage to give time to your study stuff anywhere and anytime. BNN AIO is a revolution in education system, which allow the students to Learn and Think on their own.</string>
+    <string name="intro">In the world of technology, it is very outdated to use traditional concept to study as it is not more effective and is more costly. So the system which we designed is completely based on a new innovation that brings all academic works in a single app. Using this approach will give you the advantage to give time to your study stuff anywhere and anytime. Aca-droid is a revolution in education system, which allow the students to Learn and Think on their own. The Aca-droid provide the free access to free, high-quality of study material to children so, that they can use and understand the concepts.</string>
+    <string name="goal">The Aca-droid provide the syllabus related books, video clip of topics, personal blog for additional knowledge, Discuss session for the students to ask the doubt and get clear by out expert professors and PPT of each chapter which helps students to cover-up the concept during exam times.</string>
+    <string name="user">The Aca-droid aimed mostly the students who is not able to purchase the books or the student who goes to job and cannot go to college on the regular basis.</string>
+    <string name="satyam">Work as an android developer since two years. He works on java platform.</string>
+    <string name="zaheer">Work as an android developer since two years. He works on java platform. He is also an UI/UX developer. This guy creates the design and UI of the application/software.</string>
     <string name="title_activity_teacher_main">TeacherMainActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

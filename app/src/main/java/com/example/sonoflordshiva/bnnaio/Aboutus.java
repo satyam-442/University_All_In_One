@@ -16,7 +16,7 @@ public class Aboutus extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus);
 
-        devPage = (Button) findViewById(R.id.developer);
+        /*devPage = (Button) findViewById(R.id.developer);
         devPage.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -24,10 +24,10 @@ public class Aboutus extends AppCompatActivity
             {
                 SendUserToDeveloperPage();
             }
-        });
+        });*/
     }
 
-    private void SendUserToDeveloperPage()
+    public void meetDeveloper(View view)
     {
         Intent develeoperIntent = new Intent(Aboutus.this,Developer.class);
         startActivity(develeoperIntent);

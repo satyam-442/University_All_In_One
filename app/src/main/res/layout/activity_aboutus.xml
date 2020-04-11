@@ -5,167 +5,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Aboutus"
-    android:background="@drawable/image_visiblity">
+    tools:context=".Aboutus">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:gravity="center"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:orientation="horizontal">
+            android:fontFamily="@font/ramabhadra"
+            android:paddingStart="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Aca-droid Library"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
-            <androidx.cardview.widget.CardView
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#9C9999"/>
+
+        <LinearLayout
+            android:id="@+id/introductionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_gravity="center">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageView
-                        android:id="@+id/bnncollege"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:scaleType="fitXY"
-                        android:layout_margin="3dp"
-                        android:src="@drawable/bnncollege"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"
-                        android:text="Bhiwandi Nizampur Nagar College (B.N.N)"
-                        android:textSize="16sp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#bab6b6"
-                        android:layout_margin="10dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="B.N.N. College is a college in Bhiwandi in Thane district. It is affiliated to Mumbai University. It was established in 1966 and it offers number of under graduate in the field of Arts, Commerce and Science. It is managed by Dr. Ashok Wagh since 1992"
-                        android:padding="2dp"
-                        android:textColor="#000000"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:fontFamily="@font/cantarell_bold"
+                android:text="Introduction"
+                android:textAllCaps="true"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cantarell_bold"
+                android:text="@string/intro"
+                android:textAllCaps="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"/>
+
         </LinearLayout>
 
         <LinearLayout
-            android:gravity="center"
+            android:id="@+id/goalLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
-            <androidx.cardview.widget.CardView
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="10dp"
-                android:layout_gravity="center">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageView
-                        android:id="@+id/principle_sir"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:scaleType="fitXY"
-                        android:layout_margin="3dp"
-                        android:src="@drawable/principle"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"
-                        android:text="Dr. Ashok Wagh"
-                        android:textSize="16sp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#bab6b6"
-                        android:layout_margin="10dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="The BNN college is run by Dr.Ashok Wagh(M.com,Ph.D)"
-                        android:padding="2dp"
-                        android:textColor="#000000"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cantarell_bold"
+                android:text="goal of aca-droid"
+                android:textAllCaps="true"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cantarell_bold"
+                android:text="@string/goal"
+                android:textAllCaps="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"/>
+
         </LinearLayout>
 
         <LinearLayout
-            android:gravity="center"
+            android:id="@+id/useLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
-            <androidx.cardview.widget.CardView
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="10dp"
-                android:layout_gravity="center">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageView
-                        android:id="@+id/shewale_sir"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:scaleType="fitXY"
-                        android:layout_margin="3dp"
-                        android:src="@drawable/shewale"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"
-                        android:text="Sir Pramod Shewale "
-                        android:textSize="16sp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#bab6b6"
-                        android:layout_margin="10dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Course Coordinator(IT and CS)"
-                        android:padding="2dp"
-                        android:textColor="#000000"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cantarell_bold"
+                android:text="Who can use the aca-droid?"
+                android:textAllCaps="true"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cantarell_bold"
+                android:text="@string/user"
+                android:textAllCaps="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"/>
+
         </LinearLayout>
 
         <Button
-            android:id="@+id/developer"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/button"
-            android:layout_marginBottom="10dp"
-            android:text="About Developer"
-            android:fontFamily="serif-monospace"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:onClick="meetDeveloper"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            style="@style/SolidButtonStyle"
+            android:text="Meet our team"
+            android:layout_marginBottom="15dp"/>
+
     </LinearLayout>
 </ScrollView>
