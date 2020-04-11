@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewVideoLecturesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/detailsLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <TextView
+                android:id="@+id/videoView_titleActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="26sp"/>
+
+            <VideoView
+                android:id="@+id/videoView_showVideoActivity"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/videoView_titleActivity"/>
+
+            <TextView
+                android:id="@+id/videoView_descriptionActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="19sp"
+                android:layout_below="@id/videoView_showVideoActivity"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/blog_detailsone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/videoView_descriptionActivity">
+
+                <TextView
+                    android:id="@+id/blogRead_dateActivity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date :- "
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/edit_text_txt"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/videoView_dateActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Date :- "
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/edit_text_txt"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/blogRead_timeActivityT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="        Time:-"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/edit_text_txt"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/videoView_timeActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint=" Time"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/edit_text_txt"
+                    android:layout_marginBottom="8dp"/>
+
+            </LinearLayout>
+
+            <!--<Button
+                android:layout_below="@id/blog_detailsone"
+                android:id="@+id/saveVideoForReference"
+                style="@style/SolidButtonStyle"
+                android:layout_marginTop="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="28dp"
+                android:text="S A V E   L E C T U R E"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:elevation="15dp"/>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

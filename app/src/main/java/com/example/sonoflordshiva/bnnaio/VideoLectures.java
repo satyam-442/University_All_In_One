@@ -37,7 +37,8 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class VideoLectures extends AppCompatActivity {
+public class VideoLectures extends AppCompatActivity
+{
     private Toolbar mToolbar;
     private DrawerLayout blogDrawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -174,9 +175,9 @@ public class VideoLectures extends AppCompatActivity {
                     @Override
                     public void onClick(View v)
                     {
-                        /*Intent intent = new Intent(getActivity(),ProductDetailsActivity.class);
-                        intent.putExtra("pid",product.getPidd());
-                        startActivity(intent);*/
+                        Intent intent = new Intent(VideoLectures.this,ViewVideoLecturesActivity.class);
+                        intent.putExtra("videoID",video.getVideoIdd());
+                        startActivity(intent);
                         /*ProductDetailsFragment productDetailsFragment = new ProductDetailsFragment();
                         Bundle bundle = new Bundle();
                         bundle.putString("pid",product.getPidd());
