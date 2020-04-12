@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AsTeacher.AddPptActivity">
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/uploadPdfView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="94dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/selectPdfFile"
+            style="@style/StrokeButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="S e l e c t   f i l e"
+            android:textSize="20sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"/>
+
+        <TextView
+            android:id="@+id/selectFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ramabhadra"
+            android:gravity="center"
+            android:text="No file selected!"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/selectFileSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/ramabhadra"
+            android:hint="Enter subject"
+            android:gravity="center"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp" />
+
+        <Button
+            android:id="@+id/uploadPdfFile"
+            style="@style/SolidButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="u p l o a d   f i l e"
+            android:textSize="20sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp" />
+
+    </LinearLayout>
+</RelativeLayout>

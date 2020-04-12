@@ -107,12 +107,14 @@
                                     app:cardBackgroundColor="#CF1616"
                                     app:cardCornerRadius="5dp"
                                     android:layout_marginStart="10dp"
-                                    android:layout_marginBottom="65dp">
+                                    android:layout_marginBottom="65dp"
+                                    android:onClick="navigateToAddPptPage">
                                     <ImageView
                                         android:layout_width="35dp"
                                         android:layout_height="35dp"
                                         android:src="@drawable/ppt"
-                                        android:layout_gravity="center">
+                                        android:layout_gravity="center"
+                                        android:onClick="navigateToAddPptPage">
                                     </ImageView>
                                 </androidx.cardview.widget.CardView>
 

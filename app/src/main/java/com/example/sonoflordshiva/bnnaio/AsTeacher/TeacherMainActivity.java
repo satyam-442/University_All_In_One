@@ -231,4 +231,8 @@ public class TeacherMainActivity extends AppCompatActivity
         drawerLayout.closeDrawer(GravityCompat.START);
     }
 
+    public void navigateToAddPptPage(View view) {
+        Intent intent = new Intent(this,AddPptActivity.class);
+        startActivity(intent);
+    }
 }

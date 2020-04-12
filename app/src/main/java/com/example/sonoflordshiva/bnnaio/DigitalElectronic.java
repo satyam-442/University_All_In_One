@@ -63,7 +63,7 @@ public class DigitalElectronic extends AppCompatActivity
             InputStream inputStream = null;
             try
             {
-                bar.setVisibility(View.VISIBLE);
+                //bar.setVisibility(View.VISIBLE);
                 URL url = new URL(strings[0]);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 if(urlConnection.getResponseCode()==200)

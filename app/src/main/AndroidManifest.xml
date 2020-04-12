@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -15,7 +16,8 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewVideoLecturesActivity"></activity>
+        <activity android:name=".AsTeacher.AddPptActivity"></activity>
+        <activity android:name=".ViewVideoLecturesActivity" />
         <activity android:name=".AsTeacher.AddBlogActivity" />
         <activity android:name=".ReadBlogActivity" />
         <activity android:name=".AsTeacher.AddVideoLecActivity" />
