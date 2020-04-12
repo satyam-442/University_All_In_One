@@ -1,4 +1,7 @@
-package com.example.sonoflordshiva.bnnaio;
+package com.example.sonoflordshiva.bnnaio.AsTeacher;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,9 +17,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.sonoflordshiva.bnnaio.Contact;
+import com.example.sonoflordshiva.bnnaio.Prevalent.Prevalent;
+import com.example.sonoflordshiva.bnnaio.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,14 +30,15 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class Contact extends AppCompatActivity
+public class TeacherContactusActivity extends AppCompatActivity
 {
-    private TextView eMail;
-    private TextView pNumber;
-    private TextView wAddress;
-    EditText contactName, contactEmail, contactPhone, contactSpinnerValue, contactSpinnerMessage;
-    Spinner selectOptions;
-    Button sendAppointRequestButton;
+
+    private TextView eTeacherMail;
+    private TextView pTeacherNumber;
+    private TextView wTeacherAddress;
+    EditText contactTeacherName, contactTeacherEmail, contactTeacherPhone, contactTeacherSpinnerValue, contactTeacherSpinnerMessage;
+    Spinner selectTeacherOptions;
+    Button sendTeacherAppointRequestButton;
     String requestType[] = {"-Select a type-","Business Purpose", "Learn and Explore","Others"};
     ArrayAdapter<String> adapter;
     String result, currentUserId, appointmentId;
@@ -46,16 +50,18 @@ public class Contact extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        setContentView(R.layout.activity_teacher_contactus);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUserId = mAuth.getCurrentUser().getUid();
-        appointmentRef = FirebaseDatabase.getInstance().getReference().child("AppointmentReq").child("Students");
+        //currentUserId = mAuth.getCurrentUser().getUid();
+
+        currentUserId = Prevalent.currentOnlineUser.getNamee() + Prevalent.currentOnlineUser.getPhonee();
+        appointmentRef = FirebaseDatabase.getInstance().getReference().child("AppointmentReq").child("Teachers");
 
         loadingBar = new ProgressDialog(this);
 
-        eMail = (TextView) findViewById(R.id.contact_email);
-        eMail.setOnClickListener(new View.OnClickListener()
+        eTeacherMail = (TextView) findViewById(R.id.contactTeacher_email);
+        eTeacherMail.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -63,8 +69,8 @@ public class Contact extends AppCompatActivity
                 semdMail();
             }
         });
-        pNumber = (TextView) findViewById(R.id.contact_number);
-        pNumber.setOnClickListener(new View.OnClickListener()
+        pTeacherNumber = (TextView) findViewById(R.id.contactTeacher_number);
+        pTeacherNumber.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -72,8 +78,8 @@ public class Contact extends AppCompatActivity
                 contactBnn();
             }
         });
-        wAddress = (TextView) findViewById(R.id.contact_web);
-        wAddress.setOnClickListener(new View.OnClickListener()
+        wTeacherAddress = (TextView) findViewById(R.id.contactTeacher_web);
+        wTeacherAddress.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -84,16 +90,16 @@ public class Contact extends AppCompatActivity
             }
         });
 
-        contactName = (EditText) findViewById(R.id.contactName);
-        contactEmail = (EditText) findViewById(R.id.contactEmail);
-        contactPhone = (EditText) findViewById(R.id.contactPhone);
-        contactSpinnerValue = (EditText) findViewById(R.id.contactSpinnerValue);
-        contactSpinnerMessage = (EditText) findViewById(R.id.contactSpinnerMessage);
+        contactTeacherName = (EditText) findViewById(R.id.contactTeacherName);
+        contactTeacherEmail = (EditText) findViewById(R.id.contactTeacherEmail);
+        contactTeacherPhone = (EditText) findViewById(R.id.contactTeacherPhone);
+        contactTeacherSpinnerValue = (EditText) findViewById(R.id.contactTeacherSpinnerValue);
+        contactTeacherSpinnerMessage = (EditText) findViewById(R.id.contactTeacherSpinnerMessage);
 
-        selectOptions = (Spinner) findViewById(R.id.selectOptions);
+        selectTeacherOptions = (Spinner) findViewById(R.id.selectTeacherOptions);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,requestType);
-        selectOptions.setAdapter(adapter);
-        selectOptions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        selectTeacherOptions.setAdapter(adapter);
+        selectTeacherOptions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
@@ -101,19 +107,19 @@ public class Contact extends AppCompatActivity
                 {
                     case 0:
                         result = "-Select a type-";
-                        contactSpinnerValue.setText(result);
+                        contactTeacherSpinnerValue.setText(result);
                         break;
                     case 1:
                         result = "Business Purpose";
-                        contactSpinnerValue.setText(result);
+                        contactTeacherSpinnerValue.setText(result);
                         break;
                     case 2:
                         result = "Learn and Explore";
-                        contactSpinnerValue.setText(result);
+                        contactTeacherSpinnerValue.setText(result);
                         break;
                     case 3:
                         result = "Others";
-                        contactSpinnerValue.setText(result);
+                        contactTeacherSpinnerValue.setText(result);
                         break;
                 }
             }
@@ -125,23 +131,22 @@ public class Contact extends AppCompatActivity
             }
         });
 
-        sendAppointRequestButton = (Button) findViewById(R.id.sendAppointRequestButton);
-        sendAppointRequestButton.setOnClickListener(new View.OnClickListener() {
+        sendTeacherAppointRequestButton = (Button) findViewById(R.id.sendTeacherAppointRequestButton);
+        sendTeacherAppointRequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RequestForAppointment();
             }
         });
-
     }
 
     private void RequestForAppointment()
     {
-        String name = contactName.getText().toString();
-        String email = contactEmail.getText().toString();
-        String phone = contactPhone.getText().toString();
-        String spinnerValue = contactSpinnerValue.getText().toString();
-        String message = contactSpinnerMessage.getText().toString();
+        String name = contactTeacherName.getText().toString();
+        String email = contactTeacherEmail.getText().toString();
+        String phone = contactTeacherPhone.getText().toString();
+        String spinnerValue = contactTeacherSpinnerValue.getText().toString();
+        String message = contactTeacherSpinnerMessage.getText().toString();
 
         final String saveCurrentTime, saveCurrentDate;
         Calendar calForDate = Calendar.getInstance();
@@ -171,6 +176,7 @@ public class Contact extends AppCompatActivity
             appointmentMap.put("appointmentId",appointmentId);
             appointmentMap.put("time",saveCurrentTime);
             appointmentMap.put("date",saveCurrentDate);
+            appointmentMap.put("phone",Prevalent.currentOnlineUser.getPhonee());
             /*feedbackMap.put("Contact",contact);
             feedbackMap.put("UID",uid);
             feedbackMap.put("Password",password);
@@ -183,18 +189,18 @@ public class Contact extends AppCompatActivity
                     if(task.isSuccessful())
                     {
                         //SendUserToMainActivity();
-                        Toast.makeText(Contact.this, "Request for appointment successfully submitted. We'll let you know if confirmed...", Toast.LENGTH_LONG).show();
-                        contactName.setText("");
-                        contactEmail.setText("");
-                        contactPhone.setText("");
-                        contactSpinnerValue.setText("");
-                        contactSpinnerMessage.setText("");
+                        Toast.makeText(TeacherContactusActivity.this, "Request for appointment successfully submitted. We'll let you know if confirmed...", Toast.LENGTH_LONG).show();
+                        contactTeacherName.setText("");
+                        contactTeacherEmail.setText("");
+                        contactTeacherPhone.setText("");
+                        contactTeacherSpinnerValue.setText("");
+                        contactTeacherSpinnerMessage.setText("");
                         loadingBar.dismiss();
                     }
                     else
                     {
                         String message = task.getException().getMessage();
-                        Toast.makeText(Contact.this, "Error Occurred:" + message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TeacherContactusActivity.this, "Error Occurred:" + message, Toast.LENGTH_SHORT).show();
                         loadingBar.dismiss();
                     }
                 }
@@ -216,4 +222,5 @@ public class Contact extends AppCompatActivity
         Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
         startActivity(Intent.createChooser(intent,"Choose Mailing Client"));
     }
+
 }

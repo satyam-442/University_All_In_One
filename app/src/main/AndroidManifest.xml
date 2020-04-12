@@ -16,7 +16,12 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AsTeacher.AddPptActivity"></activity>
+        <activity android:name=".AsTeacher.TeacherAboutusActivity"></activity>
+        <activity android:name=".AsTeacher.TeacherFeedbackActivity" />
+        <activity android:name=".AsTeacher.TeacherSettingsActivity" />
+        <activity android:name=".AsTeacher.TeacherContactusActivity" />
+        <activity android:name=".AsTeacher.TeacherOwnProfileActivity" />
+        <activity android:name=".AsTeacher.AddPptActivity" />
         <activity android:name=".ViewVideoLecturesActivity" />
         <activity android:name=".AsTeacher.AddBlogActivity" />
         <activity android:name=".ReadBlogActivity" />

@@ -1,0 +1,17 @@
+package com.example.sonoflordshiva.bnnaio.AsTeacher;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import com.example.sonoflordshiva.bnnaio.R;
+
+public class TeacherOwnProfileActivity extends AppCompatActivity
+{
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_teacher_own_profile);
+    }
+}

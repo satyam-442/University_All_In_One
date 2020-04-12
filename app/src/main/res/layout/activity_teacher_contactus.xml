@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AsTeacher.TeacherContactusActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="405dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:orientation="vertical"
+                android:background="@drawable/gradientbackground">
+
+                <TextView
+                    android:id="@+id/topText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact us"
+                    android:fontFamily="@font/prompt_medium"
+                    android:textSize="33sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"/>
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        app:cardCornerRadius="8dp">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="160dp"
+                                android:src="@drawable/applogo"
+                                android:layout_gravity="center"
+                                android:padding="10dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="400dp"
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="285dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affiliated to"
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ZHS Enterprise"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:textColor="#8c6c04" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Established in"
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="since 2019"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:textColor="#8c6c04"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/contactCredentials"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/contact_emailText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mail at:- "
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contactTeacher_email"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="zhsenterprise@acadroid.com"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/contact_numberText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call on:- "
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/contactTeacher_number"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02522111111"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/contact_webText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visit:- "
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/contactTeacher_web"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="www.zhsenterprise/acadroid.org"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@drawable/congradientbackground"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                app:cardCornerRadius="6dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/congradientbackground" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Or fill out this form, we'll \n get back to you."
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/prompt_medium"/>
+
+            <LinearLayout
+                android:id="@+id/nameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Your name:"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/prompt_medium"/>
+
+                <EditText
+                    android:id="@+id/contactTeacherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="John The Ripper"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/prompt_medium"
+                    android:background="@drawable/input_back"
+                    android:paddingStart="15dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Your email:"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/prompt_medium"/>
+
+                <EditText
+                    android:id="@+id/contactTeacherEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="someone@email.com"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:textSize="20sp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/prompt_medium"
+                    android:background="@drawable/input_back"
+                    android:paddingStart="15dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phoneLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Your contact no:"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/prompt_medium"/>
+
+                <EditText
+                    android:id="@+id/contactTeacherPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="9876543210"
+                    android:inputType="phone"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/prompt_medium"
+                    android:background="@drawable/input_back"
+                    android:paddingStart="15dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/spinnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameLayout"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select the type:"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/prompt_medium"/>
+
+                <Spinner
+                    android:id="@+id/selectTeacherOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:id="@+id/contactTeacherSpinnerValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Your value be stored here"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/prompt_medium"
+                    android:background="@drawable/input_back"
+                    android:paddingStart="15dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/contactTeacherSpinnerMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Write message"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:textSize="20sp"
+                    android:lines="2"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/prompt_medium"
+                    android:background="@drawable/input_back"
+                    android:paddingStart="15dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/sendTeacherAppointRequestButton"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:text="submit"
+                android:textAllCaps="true"
+                style="@style/SolidButtonStyle"
+                android:layout_marginTop="25dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="30dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

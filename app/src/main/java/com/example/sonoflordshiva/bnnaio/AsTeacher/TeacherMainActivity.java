@@ -23,10 +23,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sonoflordshiva.bnnaio.Aboutus;
+import com.example.sonoflordshiva.bnnaio.Contact;
 import com.example.sonoflordshiva.bnnaio.MainActivity;
 import com.example.sonoflordshiva.bnnaio.MyReciever;
+import com.example.sonoflordshiva.bnnaio.NotificationActivity;
 import com.example.sonoflordshiva.bnnaio.Prevalent.Prevalent;
+import com.example.sonoflordshiva.bnnaio.Profile;
 import com.example.sonoflordshiva.bnnaio.R;
+import com.example.sonoflordshiva.bnnaio.Setting;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -202,11 +207,11 @@ public class TeacherMainActivity extends AppCompatActivity
                 Toast.makeText(this, "HOME", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_profile:
-                //SendUserToProfileActivity();
+                SendUserToProfileActivity();
                 Toast.makeText(this, "PROFILE", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_setting:
-                //SendUserToSettingActivity();
+                SendUserToSettingActivity();
                 Toast.makeText(this, "SETTING", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_discuss:
@@ -214,11 +219,11 @@ public class TeacherMainActivity extends AppCompatActivity
                 Toast.makeText(this, "DISCUSS", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_contact:
-                //SendUserToContactPage();
+                SendUserToContactPage();
                 Toast.makeText(this, "CONTACT US", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_about:
-                //SendUserToAboutPage();
+                SendUserToAboutPage();
                 Toast.makeText(this, "ABOUT US", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_logout:
@@ -231,8 +236,34 @@ public class TeacherMainActivity extends AppCompatActivity
         drawerLayout.closeDrawer(GravityCompat.START);
     }
 
+    private void SendUserToAboutPage() {
+        Intent aboutIntent =  new Intent(this, Aboutus.class);
+        startActivity(aboutIntent);
+    }
+
+    private void SendUserToContactPage() {
+        Intent contactIntent =  new Intent(this, TeacherContactusActivity.class);
+        startActivity(contactIntent);
+    }
+
+    private void SendUserToSettingActivity() {
+        Intent settingIntent =  new Intent(this, TeacherSettingsActivity.class);
+        startActivity(settingIntent);
+    }
+
+    private void SendUserToProfileActivity() {
+        Intent profileIntent = new Intent(this, TeacherOwnProfileActivity.class);
+        startActivity(profileIntent);
+    }
+
     public void navigateToAddPptPage(View view) {
         Intent intent = new Intent(this,AddPptActivity.class);
         startActivity(intent);
     }
+
+    public void navigateToFeedbackPage(View view) {
+        Intent profileIntent = new Intent(this, TeacherFeedbackActivity.class);
+        startActivity(profileIntent);
+    }
+
 }
