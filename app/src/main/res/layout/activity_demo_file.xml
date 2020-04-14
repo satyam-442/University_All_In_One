@@ -5,304 +5,337 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemoFile">
+    tools:context=".AsTeacher.TeacherOwnProfileActivity">
 
     <ImageView
-        android:id="@+id/homeTop"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:src="@drawable/pa"
-        android:scaleType="fitXY"/>
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/backteachprofile"/>
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Discover Your Need"
-        android:fontFamily="@font/alegreya"
-        android:textSize="24sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/white"/>
+        android:layout_height="match_parent"
+        android:src="@drawable/teachergrad"/>
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/homeTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/teacher_profilePage_picture"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/default_avatar" />
+
+            <TextView
+                android:id="@+id/teacher_profilePage_name"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/pacifico"
+                android:gravity="center"
+                android:hint="NAME"
+                android:textColor="@color/white"
+                android:textColorHint="#fff"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/line_background"
+                android:gravity="center">
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
             android:gravity="center"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#DFDCD4"
-                app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blog Written"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/syllabus"
-                        android:layout_width="155dp"
-                        android:layout_height="95dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/syllabus" />
+                <TextView
+                    android:id="@+id/teacher_profilePage_blogPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="15"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="18sp" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/grey"/>
+            </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
+            <RelativeLayout
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/line_background">
 
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </RelativeLayout>
 
-            <android.support.v7.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#DFDCD4"
-                app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blog Followers"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/ppt"
-                        android:layout_width="155dp"
-                        android:layout_height="95dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ppt" />
+                <TextView
+                    android:id="@+id/teacher_profilePage_blogFollower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="19"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="18sp" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/grey"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            android:clipToPadding="false"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#DFDCD4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-mail"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/teacher_profilePage_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="abc@gmail.com"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
 
-                    <ImageView
-                        android:id="@+id/videos"
-                        android:layout_width="155dp"
-                        android:layout_height="95dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/video" />
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/line_background"
+                android:gravity="center">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/grey"/>
+            </RelativeLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#DFDCD4">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/question"
-                        android:layout_width="155dp"
-                        android:layout_height="95dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/questionpic" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/grey"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/phoneTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_below="@id/phoneTxt"
+                android:id="@+id/teacher_profilePage_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="+91 9876543210"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:visibility="invisible"
+                android:id="@+id/layoutNotVerified"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_below="@id/teacher_profilePage_phone"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_phoneStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Verified"
+                    android:textColor="@color/white"
+                    android:shadowColor="@color/red"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    style="@style/SolidButtonStyle"
+                    android:text="Verify"
+                    android:textSize="19sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutVerified"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_below="@id/teacher_profilePage_phone"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_phoneStatusVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verified"
+                    android:textColor="@color/green"
+                    android:shadowColor="@color/green"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/line_background"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/layoutNotVerified">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            android:clipToPadding="false"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                app:cardCornerRadius="5dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#DFDCD4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qualification"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/teacher_profilePage_merit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Teacher's qualification"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
 
-                    <ImageView
-                        android:id="@+id/blog"
-                        android:layout_width="155dp"
-                        android:layout_height="95dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/blog" />
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/line_background"
+                android:gravity="center" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/grey"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#DFDCD4">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/feedback"
-                        android:layout_width="155dp"
-                        android:layout_height="95dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/feedback" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/grey"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
         </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <!--<Button
+                android:id="@+id/teacher_profilePage_button"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="95dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginBottom="56dp"
+                android:background="@drawable/techer_profile_follow_button"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="F O L L O W"
+                android:textColor="@color/white"
+                android:textSize="18sp" />-->
+
+        </RelativeLayout>
     </LinearLayout>
-
-
-
 </RelativeLayout>

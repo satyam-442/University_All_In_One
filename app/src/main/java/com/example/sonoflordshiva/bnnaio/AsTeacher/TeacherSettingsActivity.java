@@ -88,7 +88,7 @@ public class TeacherSettingsActivity extends AppCompatActivity
         });
 
         settingTeacher_profile_name = (EditText) findViewById(R.id.settingTeacher_profile_name);
-        settingTeacher_profile_contact = (EditText) findViewById(R.id.settingTeacher_profile_contact);
+        //settingTeacher_profile_contact = (EditText) findViewById(R.id.settingTeacher_profile_contact);
         settingTeacher_profile_email = (EditText) findViewById(R.id.settingTeacher_profile_email);
         settingTeacher_profile_rollno = (EditText) findViewById(R.id.settingTeacher_profile_rollno);
         settingTeacher_update_profilebtn = (Button) findViewById(R.id.settingTeacher_update_profilebtn);

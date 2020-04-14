@@ -54,7 +54,7 @@
                 android:layout_height="4dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2dp"
-                android:background="@color/grey"
+                android:background="@drawable/line_background"
                 android:gravity="center">
 
             </RelativeLayout>
@@ -162,20 +162,21 @@
                 android:layout_height="4dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:background="@color/grey"
+                android:background="@drawable/line_background"
                 android:gravity="center">
 
             </RelativeLayout>
 
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="35dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -196,17 +197,158 @@
                 android:textColorHint="@color/white"
                 android:textSize="18sp" />
 
+            <LinearLayout
+                android:id="@+id/layoutNotVerified"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_phoneStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Verified"
+                    android:textColor="@color/white"
+                    android:shadowColor="@color/red"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    style="@style/SolidButtonStyle"
+                    android:text="Verify"
+                    android:textSize="19sp"/>
+
+            </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="210dp"
                 android:layout_height="4dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:background="@color/grey"
+                android:background="@drawable/line_background"
                 android:gravity="center">
 
             </RelativeLayout>
 
-        </LinearLayout>
+        </LinearLayout>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/phoneTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_below="@id/phoneTxt"
+                android:id="@+id/teacher_profilePage_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="+91 9876543210"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:id="@+id/layoutNotVerified"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_below="@id/teacher_profilePage_phone"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_phoneStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Verified"
+                    android:textColor="@color/white"
+                    android:shadowColor="@color/red"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/verifyPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    style="@style/SolidButtonStyle"
+                    android:text="Verify"
+                    android:textSize="19sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="invisible"
+                android:id="@+id/layoutVerified"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_below="@id/teacher_profilePage_phone"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/teacher_profilePage_phoneStatusVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verified"
+                    android:textColor="@color/green"
+                    android:shadowColor="@color/green"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/line_background"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/layoutNotVerified">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -240,7 +382,7 @@
                 android:layout_height="4dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:background="@color/grey"
+                android:background="@drawable/line_background"
                 android:gravity="center" />
 
         </LinearLayout>

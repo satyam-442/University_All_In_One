@@ -71,4 +71,5 @@ dependencies {
     implementation 'com.onesignal:OneSignal:3.12.6'
     implementation 'com.github.rey5137:material:1.2.5'
     implementation 'io.paperdb:paperdb:2.6'
+    implementation 'com.chaos.view:pinview:1.4.3'
 }
