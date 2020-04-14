@@ -112,6 +112,7 @@ public class TeacherMainActivity extends AppCompatActivity
         CircleImageView userImage = navView.findViewById(R.id.nav_header_profile);
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getNamee());
+        Picasso.with(TeacherMainActivity.this).load(Prevalent.currentOnlineUser.getImagee()).into(userImage);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
         {

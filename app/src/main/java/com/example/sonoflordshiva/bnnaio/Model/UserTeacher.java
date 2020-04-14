@@ -2,17 +2,18 @@ package com.example.sonoflordshiva.bnnaio.Model;
 
 public class UserTeacher
 {
-    public String Name, Password, Phone, Qualification, Email;
+    public String Name, Password, Phone, Qualification, Email, image;
 
     public UserTeacher() {
     }
 
-    public UserTeacher(String name, String password, String phone, String qualification, String email) {
+    public UserTeacher(String name, String password, String phone, String qualification, String email, String image) {
         Name = name;
         Password = password;
         Phone = phone;
         Qualification = qualification;
         Email = email;
+        this.image = image;
     }
 
     public String getNamee() {
@@ -53,5 +54,13 @@ public class UserTeacher
 
     public void setEmaill(String email) {
         Email = email;
+    }
+
+    public String getImagee() {
+        return image;
+    }
+
+    public void setImagee(String image) {
+        this.image = image;
     }
 }

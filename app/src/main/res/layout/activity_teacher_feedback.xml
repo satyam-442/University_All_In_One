@@ -70,7 +70,7 @@
                             android:fontFamily="@font/prompt_medium"/>
 
                         <EditText
-                            android:id="@+id/feedbackName"
+                            android:id="@+id/feedbackTeacherName"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:hint="John The Ripper"
@@ -104,7 +104,7 @@
                             android:fontFamily="@font/prompt_medium"/>
 
                         <Spinner
-                            android:id="@+id/selectOptions"
+                            android:id="@+id/selectTeacherOptions"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginStart="30dp"
@@ -112,7 +112,7 @@
                             android:layout_marginTop="15dp"/>
 
                         <EditText
-                            android:id="@+id/feedbackSpinnerValue"
+                            android:id="@+id/feedbackTeacherSpinnerValue"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:hint="Your value be stored here"
@@ -126,7 +126,7 @@
                             android:layout_marginTop="10dp"/>
 
                         <EditText
-                            android:id="@+id/feedbackSpinnerOtherOption"
+                            android:id="@+id/feedbackTeacherSpinnerOtherOption"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:hint="Define your problem"
@@ -141,7 +141,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/sendButton"
+                        android:id="@+id/sendTeacherButton"
                         android:layout_width="180dp"
                         android:layout_height="40dp"
                         android:text="submit"
@@ -156,7 +156,7 @@
         </FrameLayout>
     </RelativeLayout>
 
-    <com.google.android.material.navigation.NavigationView
+    <!--<com.google.android.material.navigation.NavigationView
         android:theme="@style/NavTextSize"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -166,5 +166,5 @@
         android:id="@+id/navigation_view"
         android:background="@drawable/image_visiblity">
 
-    </com.google.android.material.navigation.NavigationView>
+    </com.google.android.material.navigation.NavigationView>-->
 </androidx.drawerlayout.widget.DrawerLayout>

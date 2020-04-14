@@ -129,6 +129,7 @@ public class RegisterTeacher extends AppCompatActivity
                     userMap.put("Email",email);
                     userMap.put("Qualification",qualification);
                     userMap.put("Password",password);
+                    userMap.put("image","default");
                     RootRef.child("Teachers").child(phone).updateChildren(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task)

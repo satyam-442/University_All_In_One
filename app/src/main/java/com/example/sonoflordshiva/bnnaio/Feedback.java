@@ -66,7 +66,7 @@ public class Feedback extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
         UserRef= FirebaseDatabase.getInstance().getReference().child("Students");
-        FeedbackRef= FirebaseDatabase.getInstance().getReference().child("Feedback");
+        FeedbackRef= FirebaseDatabase.getInstance().getReference().child("Feedback").child("Students");
 
         mToolbar = (Toolbar) findViewById(R.id.feedback_page_toolbar);
         setSupportActionBar(mToolbar);
