@@ -133,7 +133,7 @@
                         android:fontFamily="@font/prompt_medium"
                         android:textSize="17sp"
                         android:layout_marginStart="40dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="9dp"
                         android:textStyle="bold"/>
 
                     <com.chaos.view.PinView
